@@ -1,0 +1,1 @@
+- https://github.com/ksindi/managers-playbook
