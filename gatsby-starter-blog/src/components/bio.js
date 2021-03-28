@@ -36,7 +36,7 @@ const Bio = () => {
         className="bio-avatar"
         layout="fixed"
         formats={["AUTO", "WEBP", "AVIF"]}
-        src="../images/profile-pic.png"
+        src="https://s.gravatar.com/avatar/88b1d02636e0482a16961bd695669d70?s=80"
         width={50}
         height={50}
         quality={95}
