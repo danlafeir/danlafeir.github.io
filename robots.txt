@@ -1,0 +1,3 @@
+User-agent: *
+
+sitemap: https://daniellafeir.com/sitemap-index.xml
