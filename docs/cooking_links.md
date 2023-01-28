@@ -1,2 +1,0 @@
-- https://www.bonappetit.com/story/clean-wooden-cutting-board
-- https://www.thekitchn.com/how-to-clean-a-cast-iron-skillet-cleaning-lessons-from-the-kitchn-107747

@@ -1,3 +1,0 @@
-- https://github.com/ksindi/managers-playbook
-- https://leaddev.com/personal-development/should-engineering-managers-be-technical
-- https://charity.wtf/2019/01/04/engineering-management-the-pendulum-or-the-ladder/
