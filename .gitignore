@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -67,3 +68,6 @@ public
 .idea
 .vscode
 .DS_Store
+=======
+**node_modules/**
+>>>>>>> 1a0da71 (My usual reset of this :P)
