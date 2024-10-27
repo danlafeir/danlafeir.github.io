@@ -31,7 +31,7 @@ const LeftNav = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio" style={{ flexDirection: 'column', width: 200, height: '100%' }}>
+    <div className="bio" style={{ flexDirection: 'column', width: 200, height: '100vh', paddingRight: 75, position: 'sticky', top: '2.5rem' }}>
       <StaticImage
         className="bio-avatar"
         layout="fixed"
