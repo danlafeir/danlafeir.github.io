@@ -4,24 +4,24 @@
   "description": "Daniel Lafeir's personal website",
   "version": "0.1.0",
   "dependencies": {
-    "@fontsource/merriweather": "^5.0.8",
-    "@fontsource-variable/montserrat": "^5.0.17",
-    "gatsby": "^5.13.7",
-    "gatsby-plugin-image": "^3.13.1",
-    "gatsby-plugin-manifest": "^5.13.1",
-    "gatsby-plugin-sharp": "^5.13.1",
-    "gatsby-remark-images": "^7.13.2",
-    "gatsby-remark-prismjs": "^7.13.2",
-    "gatsby-remark-responsive-iframe": "^6.13.2",
-    "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-transformer-remark": "^6.13.1",
-    "gatsby-transformer-sharp": "^5.13.1",
-    "prismjs": "^1.29.0",
+    "@fontsource/merriweather": "^5.2.11",
+    "@fontsource-variable/montserrat": "^5.2.8",
+    "gatsby": "^5.16.1",
+    "gatsby-plugin-image": "^3.16.0",
+    "gatsby-plugin-manifest": "^5.16.0",
+    "gatsby-plugin-sharp": "^5.16.0",
+    "gatsby-remark-images": "^7.16.0",
+    "gatsby-remark-prismjs": "^7.16.0",
+    "gatsby-remark-responsive-iframe": "^6.16.0",
+    "gatsby-source-filesystem": "^5.16.0",
+    "gatsby-transformer-remark": "^6.16.0",
+    "gatsby-transformer-sharp": "^5.16.0",
+    "prismjs": "^1.30.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
-    "prettier": "^2.8.8"
+    "prettier": "^3.8.1"
   },
   "scripts": {
     "prepare": "git config core.hooksPath .githooks",
