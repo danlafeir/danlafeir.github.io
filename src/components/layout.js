@@ -44,6 +44,7 @@ const Layout = ({ location, children }) => {
   const navLinks = [
     { to: "/", label: "About" },
     { to: "/blog", label: "Blog" },
+    { to: "/playbook", label: "Playbook" },
     { to: "/projects", label: "Projects" },
     { to: "/resume", label: "Resume" },
   ]

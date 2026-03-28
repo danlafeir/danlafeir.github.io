@@ -2,6 +2,7 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const blogPost = path.resolve(`./src/templates/blog-post.js`)
+const playbookPage = path.resolve(`./src/templates/playbook-page.js`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -13,6 +14,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id
           fields {
             slug
+            collection
           }
         }
       }
@@ -20,28 +22,35 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   `)
 
   if (result.errors) {
-    reporter.panicOnBuild(`Error loading blog posts`, result.errors)
+    reporter.panicOnBuild(`Error loading markdown pages`, result.errors)
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const allNodes = result.data.allMarkdownRemark.nodes
+  const blogPosts = allNodes.filter(n => n.fields.collection === `blog`)
+  const playbookPages = allNodes.filter(n => n.fields.collection === `playbook`)
 
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+  blogPosts.forEach((post, index) => {
+    const previousPostId = index === 0 ? null : blogPosts[index - 1].id
+    const nextPostId = index === blogPosts.length - 1 ? null : blogPosts[index + 1].id
 
-      createPage({
-        path: `/blog${post.fields.slug}`,
-        component: blogPost,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-        },
-      })
+    createPage({
+      path: `/blog${post.fields.slug}`,
+      component: blogPost,
+      context: { id: post.id, previousPostId, nextPostId },
     })
-  }
+  })
+
+  playbookPages.forEach((page, index) => {
+    const previousPageId = index === 0 ? null : playbookPages[index - 1].id
+    const nextPageId = index === playbookPages.length - 1 ? null : playbookPages[index + 1].id
+
+    createPage({
+      path: `/playbook${page.fields.slug}`,
+      component: playbookPage,
+      context: { id: page.id, previousPageId, nextPageId },
+    })
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -49,12 +58,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
+    createNodeField({ name: `slug`, node, value })
 
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
+    const fileNode = getNode(node.parent)
+    createNodeField({ name: `collection`, node, value: fileNode.sourceInstanceName })
   }
 }
 
@@ -87,10 +94,13 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      section: String
+      order: Int
     }
 
     type Fields {
       slug: String
+      collection: String
     }
   `)
 }

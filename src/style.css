@@ -547,6 +547,90 @@ hr {
   text-decoration: none;
 }
 
+/* ── Playbook ── */
+.playbook-breadcrumb {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.playbook-breadcrumb a {
+  color: var(--color-text-muted);
+}
+
+.playbook-breadcrumb span {
+  margin: 0 0.3rem;
+}
+
+.playbook-section {
+  margin-bottom: 2.5rem;
+}
+
+.playbook-section-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.playbook-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.playbook-list-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.playbook-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--transition);
+}
+
+.playbook-link:hover { text-decoration: none; }
+
+.playbook-link:hover .playbook-link-title {
+  color: var(--color-primary);
+}
+
+.playbook-link-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-heading);
+  flex-shrink: 0;
+  transition: color var(--transition);
+}
+
+.playbook-link-desc {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-align: right;
+  line-height: 1.4;
+}
+
+.playbook-source {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+}
+
 /* ── 404 ── */
 .not-found {
   text-align: center;
