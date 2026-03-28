@@ -24,6 +24,7 @@
     "prettier": "^2.8.8"
   },
   "scripts": {
+    "prepare": "git config core.hooksPath .githooks",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
