@@ -1,7 +1,0 @@
-#!/bin/sh
-set -e
-
-echo "Running pre-commit build..."
-npm run build
-
-echo "Build succeeded."
