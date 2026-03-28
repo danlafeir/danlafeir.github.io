@@ -25,7 +25,7 @@
   },
   "scripts": {
     "prepare": "git config core.hooksPath .githooks",
-    "build": "gatsby build && rm -rf docs && cp -r public docs",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
