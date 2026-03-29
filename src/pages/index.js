@@ -15,10 +15,14 @@ const AboutPage = ({ data, location }) => {
 
       <div className="about-intro">
         <p>
-          I'm a software engineer who cares about developer experience, platform
-          engineering, and building systems that teams can actually understand and
-          maintain. I work across infrastructure and application layers, with a
-          particular interest in Kubernetes, cloud platforms, and internal tooling.
+          I'm a{" "}
+          <a href="https://tidyfirst.substack.com/p/paint-drip-people" target="_blank" rel="noopener noreferrer">paint drip engineer</a>
+          {" "}who rides the{" "}
+          <a href="https://charity.wtf/2017/05/11/the-engineer-manager-pendulum/" target="_blank" rel="noopener noreferrer">engineer/manager pendulum</a>
+          {" "}— building deep expertise across multiple domains rather than settling into a single lane.
+        </p>
+        <p>
+          I approach problems through a systems thinking lens: understanding how the parts interact before prescribing solutions, and architecting for scale by addressing root causes rather than symptoms. The goal is software that teams can actually reason about and evolve — not just software that ships.
         </p>
         <p>
           When I'm not writing code, I write about the things I observe in software
