@@ -26,7 +26,7 @@ const ResumePage = ({ location }) => {
       <div className="page-header">
         <h1 className="page-title">Daniel Lafeir <span style={{ fontWeight: 400, fontSize: "1.1rem", color: "var(--color-text-muted)" }}>(he/him)</span></h1>
         <p className="page-subtitle">
-          Chicago, IL · <a href="mailto:danlafeir@gmail.com">danlafeir@gmail.com</a>
+          Chicago, IL
           {" · "}
           <a href="https://linkedin.com/in/danlafeir" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           {" · "}
