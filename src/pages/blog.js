@@ -43,7 +43,10 @@ export default BlogPage
 
 export const pageQuery = graphql`
   {
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(
+      sort: { frontmatter: { date: DESC } }
+      filter: { fields: { collection: { eq: "blog" } } }
+    ) {
       nodes {
         excerpt
         fields {
