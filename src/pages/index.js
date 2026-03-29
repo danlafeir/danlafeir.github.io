@@ -10,7 +10,7 @@ const AboutPage = ({ data, location }) => {
     <Layout location={location}>
       <div className="page-header">
         <h1 className="page-title">Hi, I'm Dan Lafeir</h1>
-        <p className="page-subtitle">Software Engineer</p>
+        <p className="page-subtitle">Software builder</p>
       </div>
 
       <div className="about-intro">
@@ -28,6 +28,7 @@ const AboutPage = ({ data, location }) => {
         <p>
           Feel free to explore my{" "}
           <Link to="/blog">writing</Link>,{" "}
+          <Link to="/playbook">engineering playbook</Link>,{" "}
           <Link to="/projects">projects</Link>, or{" "}
           <Link to="/resume">resume</Link>. You can also find me on{" "}
           <a
@@ -64,13 +65,13 @@ const AboutPage = ({ data, location }) => {
               marginBottom: "1.25rem",
             }}
           >
-            Recent Writing
+            Recently Updated
           </h2>
           <ol className="post-list">
             {recentPosts.map(post => (
               <li key={post.fields.slug} className="post-list-item">
                 <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", margin: "0 0 0.3rem", lineHeight: 1.3 }}>
-                  <Link to={`/blog${post.fields.slug}`}>
+                  <Link to={`/${post.fields.collection}${post.fields.slug}`}>
                     {post.frontmatter.title}
                   </Link>
                 </h3>
@@ -111,6 +112,7 @@ export const pageQuery = graphql`
         excerpt
         fields {
           slug
+          collection
         }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
