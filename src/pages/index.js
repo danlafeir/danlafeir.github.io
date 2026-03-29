@@ -17,7 +17,7 @@ const AboutPage = ({ data, location }) => {
         <p>
           I'm a{" "}
           <a href="https://tidyfirst.substack.com/p/paint-drip-people" target="_blank" rel="noopener noreferrer">paint drip engineer</a>
-          {" "}who rides the{" "}
+          {" "}who swings on the{" "}
           <a href="https://charity.wtf/2017/05/11/the-engineer-manager-pendulum/" target="_blank" rel="noopener noreferrer">engineer/manager pendulum</a>
           {" "}— building deep expertise across multiple domains rather than settling into a single lane.
         </p>
