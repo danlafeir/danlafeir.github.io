@@ -4,55 +4,21 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const AboutPage = ({ data, location }) => {
-  const recentPosts = data.allMarkdownRemark.nodes
+  const { aboutPage, allMarkdownRemark } = data
+  const recentPosts = allMarkdownRemark.nodes
+  const { title, subtitle } = aboutPage.frontmatter
 
   return (
     <Layout location={location}>
       <div className="page-header">
-        <h1 className="page-title">Hi, I'm Dan Lafeir</h1>
-        <p className="page-subtitle">Software builder</p>
+        <h1 className="page-title">{title}</h1>
+        <p className="page-subtitle">{subtitle}</p>
       </div>
 
-      <div className="about-intro">
-        <p>
-          I'm a{" "}
-          <a href="https://tidyfirst.substack.com/p/paint-drip-people" target="_blank" rel="noopener noreferrer">paint drip engineer</a>
-          {" "}who swings on the{" "}
-          <a href="https://charity.wtf/2017/05/11/the-engineer-manager-pendulum/" target="_blank" rel="noopener noreferrer">engineer/manager pendulum</a>
-          {" "}— building deep expertise across multiple domains rather than settling into a single lane.
-        </p>
-        <p>
-          I approach problems through a systems thinking lens: understanding how the parts interact before prescribing solutions, and architecting for scale by addressing root causes rather than symptoms. The goal is software that teams can actually reason about and evolve — not just software that ships.
-        </p>
-        <p>
-          When I'm not writing code, I write about the things I observe in software
-          teams — the habits, patterns, and tradeoffs that quietly shape how people
-          work.
-        </p>
-        <p>
-          Feel free to explore my{" "}
-          <Link to="/blog">writing</Link>,{" "}
-          <Link to="/playbook">engineering playbook</Link>,{" "}
-          <Link to="/projects">projects</Link>, or{" "}
-          <Link to="/resume">resume</Link>. You can also find me on{" "}
-          <a
-            href="https://github.com/danlafeir"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://linkedin.com/in/danlafeir"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-          .
-        </p>
-      </div>
+      <div
+        className="about-intro"
+        dangerouslySetInnerHTML={{ __html: aboutPage.html }}
+      />
 
       {recentPosts.length > 0 && (
         <section style={{ marginTop: "2.5rem" }}>
@@ -108,8 +74,18 @@ export default AboutPage
 
 export const pageQuery = graphql`
   {
+    aboutPage: markdownRemark(
+      fields: { collection: { eq: "pages" }, slug: { eq: "/about/" } }
+    ) {
+      html
+      frontmatter {
+        title
+        subtitle
+      }
+    }
     allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }
+      filter: { fields: { collection: { ne: "pages" } } }
       limit: 3
     ) {
       nodes {

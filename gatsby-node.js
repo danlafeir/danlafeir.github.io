@@ -96,6 +96,38 @@ exports.createSchemaCustomization = ({ actions }) => {
       date: Date @dateformat
       section: String
       order: Int
+      subtitle: String
+      projects: [ProjectItem]
+      pronouns: String
+      location: String
+      intro: String
+      currentStatus: String
+      summary: [String]
+      experience: [ExperienceEntry]
+      technicalProficiencyText: String
+      skills: [String]
+      education: [EducationEntry]
+    }
+
+    type ProjectItem {
+      name: String
+      description: String
+      url: String
+      topics: [String]
+    }
+
+    type ExperienceEntry {
+      title: String
+      company: String
+      date: String
+      intro: String
+      bullets: [String]
+    }
+
+    type EducationEntry {
+      title: String
+      subtitle: String
+      date: String
     }
 
     type Fields {

@@ -207,6 +207,17 @@ hr {
 
 .about-intro p { margin-top: 0; }
 
+.about-intro hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2rem 0 1rem;
+}
+
+.about-intro hr + p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
 /* ── Blog listing ── */
 .post-list {
   list-style: none;
