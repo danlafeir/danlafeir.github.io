@@ -2,8 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-// The hash fragment is never sent to GitHub's servers — all decoding
-// happens client-side in useEffect.
+// The hash fragment is never sent to the server — all decoding happens client-side.
 
 const CopyButton = ({ text, label = "Copy" }) => {
   const [copied, setCopied] = React.useState(false)
@@ -34,13 +33,20 @@ const CodeBlock = ({ children }) => (
 const Landing = () => (
   <div>
     <p style={styles.lead}>
-      <strong>tin-can</strong> is a peer-to-peer CLI communication tool.
-      Two cans, one string — direct encrypted audio and text, no accounts.
+      <strong>tin-can</strong> is a peer-to-peer CLI tool for encrypted text
+      chat and voice calls. No accounts, no servers — just two peers.
     </p>
     <p>
-      Install it and run <code style={styles.inlineCode}>tin-can attach-string</code> to
-      get a URL to share with your peer. When they open it, this page tells
-      them exactly what to do.
+      The easiest way to connect is with a shared secret:
+    </p>
+    <CodeBlock>{`# Peer A
+tin-can attach-string "your shared secret"
+
+# Peer B
+tin-can tap "your shared secret"`}</CodeBlock>
+    <p style={styles.muted}>
+      Or use <code style={styles.inlineCode}>--static-link</code> to exchange
+      URLs instead of a shared secret.
     </p>
     <p>
       <a href="https://github.com/danlafeir/tin-can" style={styles.link}>
@@ -51,7 +57,7 @@ const Landing = () => (
 )
 
 const OfferPage = ({ offerUrl }) => {
-  const joinCmd = `tin-can join "${offerUrl}"`
+  const joinCmd = `tin-can tap --static-link "${offerUrl}"`
 
   return (
     <div>
@@ -76,10 +82,7 @@ const OfferPage = ({ offerUrl }) => {
 const AnswerPage = ({ answerUrl, answerB64 }) => (
   <div>
     <h2 style={styles.subhead}>Send this back to your peer</h2>
-    <p>
-      Give your peer this URL (or paste the raw base64 into their waiting
-      prompt):
-    </p>
+    <p>Give your peer this URL:</p>
     <CodeBlock>{answerUrl}</CodeBlock>
     <details style={styles.details}>
       <summary style={styles.summary}>Raw base64 (paste directly into the prompt)</summary>
@@ -106,13 +109,11 @@ const CanPage = ({ location }) => {
     const hash = window.location.hash.slice(1)
 
     if (hash.startsWith("o=")) {
-      const b64 = hash.slice(2)
       setState("offer")
-      setPayload({ offerUrl: window.location.href, b64 })
+      setPayload({ offerUrl: window.location.href, b64: hash.slice(2) })
     } else if (hash.startsWith("a=")) {
-      const b64 = hash.slice(2)
       setState("answer")
-      setPayload({ answerUrl: window.location.href, b64 })
+      setPayload({ answerUrl: window.location.href, b64: hash.slice(2) })
     } else {
       setState("landing")
     }
@@ -120,14 +121,8 @@ const CanPage = ({ location }) => {
 
   const renderContent = () => {
     if (state === "loading") return null
-    if (state === "offer") return <OfferPage offerUrl={window.location.href} />
-    if (state === "answer")
-      return (
-        <AnswerPage
-          answerUrl={payload.answerUrl}
-          answerB64={payload.b64}
-        />
-      )
+    if (state === "offer") return <OfferPage offerUrl={payload.offerUrl} />
+    if (state === "answer") return <AnswerPage answerUrl={payload.answerUrl} answerB64={payload.b64} />
     return <Landing />
   }
 
@@ -146,7 +141,7 @@ export const Head = () => <Seo title="tin-can" />
 
 export default CanPage
 
-// ── Styles ───────────────────────────────────────────────────────────────────
+// ── Styles ────────────────────────────────────────────────────────────────────
 
 const styles = {
   lead: {
