@@ -2,7 +2,7 @@
 title: Daniel Lafeir
 pronouns: he/him
 location: Chicago, IL
-intro: 'I am an engineering leader who lives in the Engineer/Manager Pendulum. I bring a range of experience from hands-on development and team management roles across diverse technical domains and organizational structures. My technical leadership style is centered around systems thinking, lean value-aligned software delivery, and partnership with business stakeholders. I have led through organizational change, harvested my learning over the years into reusable tools, and prioritize working software over "working" slideware.'
+intro: 'I am an engineering leader who has focused his career around idea of the Engineer/Manager Pendulum. I bring a range of experience from hands-on development and team management roles across diverse technical domains and organizational structures. My technical leadership style is centered around systems thinking, lean value-aligned software delivery, and partnership with business stakeholders. I have led through organizational change, harvested my learning over the years into reusable tools, and prioritize working software over "working" slideware.'
 currentStatus: "Currently looking to swing back into an IC role, ideally in a more complicated, technical domain."
 summary:
   - "12 years building software professionally"
@@ -14,9 +14,9 @@ experience:
     date: "Sept 2024 – Present"
     intro: "Leading three teams and one manager building systems in the Order domain — search of order data, asynchronous order workflows, payment capabilities, and analytical data products."
     bullets:
-      - "Hired 2 people, worked on 2 promotions, and managed 1 person out as part of continuous improvement toward a leaner, higher-functioning team."
+      - "Built up 3 leaner, higher-functioning teams with some tough performance management, celebrated promotions and hiring people with the right aptitude and attitude" 
       - "Built and executed a release strategy with Product to deliver net-new Order software starting with ~6 orders/day for select customers to create a faster feedback loop and surface unknown unknowns."
-      - "Facilitated bi-weekly prioritization meetings with partner SAP teams to balance modernized Order software delivery against a multi-year, massive SAP upgrade."
+      - "Facilitated bi-weekly prioritization meetings with partner SAP teams, who claimed to have no capacity for work, to balance work across new Order software delivery and a multi-year, massive SAP upgrade."
       - "Delivered 4 Order Data Products for multiple analytical use cases, including research on frequency of orders with damaged products and inconsistent application of customer order settings across systems."
       - "Drove cross-team kickoffs and working sessions with EMs and Product managers to break down work using domain-driven design and minimize friction in the team topology."
   - title: Senior Staff Engineer
