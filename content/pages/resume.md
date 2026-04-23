@@ -3,7 +3,7 @@ title: Daniel Lafeir
 pronouns: he/him
 location: Chicago, IL
 intro: 'I am an engineering leader who has focused his career around idea of the Engineer/Manager Pendulum. I bring a range of experience from hands-on development and team management roles across diverse technical domains and organizational structures. My technical leadership style is centered around systems thinking, lean value-aligned software delivery, and partnership with business stakeholders. I have led through organizational change, harvested my learning over the years into reusable tools, and prioritize working software over "working" slideware.'
-currentStatus: "Currently looking to swing back into an IC role, ideally in a more complicated, technical domain."
+currentStatus: "Currently looking to swing back into an IC role, ideally in a more complicated, technical domain. I enjoy management and creating space for people to be successful but feeling that tension to get back into the craftsmanship"
 summary:
   - "12 years building software professionally"
   - "8 years leading teams — currently managing 22 people, 2 years managing managers"

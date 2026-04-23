@@ -547,15 +547,122 @@ hr {
   font-weight: 600;
   font-size: 0.875rem;
   color: var(--color-primary);
+  background: transparent;
   border: 1px solid var(--color-primary);
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
-  margin-bottom: 2rem;
+  cursor: pointer;
   transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .resume-download-link:hover {
   background: var(--color-tag-bg);
   text-decoration: none;
+}
+
+/* ── Print / PDF ── */
+@page {
+  margin: 0.6in 0.45in;
+}
+
+@media print {
+  .no-print { display: none !important; }
+
+  .site-wrapper { display: block; }
+
+  .sidebar { display: none; }
+
+  .main-content {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.35;
+    color: #000;
+    background: #fff;
+  }
+
+  a { color: #000; text-decoration: none; }
+
+  /* Header */
+  .page-header {
+    border-bottom-color: #ccc;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .page-title {
+    font-size: 16pt;
+    margin-bottom: 0.2rem;
+  }
+
+  .page-subtitle { font-size: 12pt; }
+
+  /* Intro block */
+  .about-intro {
+    font-size: 12pt;
+    line-height: 1.35;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Sections */
+  .resume-section { margin-bottom: 0.6rem; }
+
+  .resume-section-title {
+    font-size: 8pt;
+    border-bottom-color: #ccc;
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Entries — allow entries to span pages, but keep bullets/descriptions intact */
+  .resume-entry { margin-bottom: 0.45rem; }
+
+  .resume-entry-header {
+    page-break-after: avoid;
+    margin-bottom: 0;
+  }
+
+  .resume-entry-title { font-size: 12pt; }
+
+  .resume-entry-date { font-size: 10pt; }
+
+  .resume-entry-subtitle {
+    font-size: 10pt;
+    margin: 0 0 0.1rem;
+    page-break-after: avoid;
+  }
+
+  .resume-entry-body {
+    font-size: 12pt;
+    line-height: 1.35;
+  }
+
+  .resume-entry-body p {
+    page-break-inside: avoid;
+    margin: 0 0 0.15rem;
+  }
+
+  .resume-entry-body ul {
+    margin: 0.1rem 0 0;
+    padding-left: 1.1rem;
+  }
+
+  .resume-entry-body li {
+    page-break-inside: avoid;
+    margin-bottom: 0.05rem;
+  }
+
+  /* Skills */
+  .skills-list { gap: 0.25rem; }
+
+  .skill-tag {
+    font-size: 9pt;
+    padding: 0.1rem 0.5rem;
+  }
 }
 
 /* ── Playbook ── */

@@ -3,7 +3,7 @@ title: Projects
 subtitle: Things I've built or contributed to.
 projects:
   - name: tin-can
-    description: "Peer-to-peer CLI tool for encrypted text chat and voice calls.
+    description: "Peer-to-peer CLI tool for encrypted text chat and voice calls."
     url: "https://github.com/danlafeir/tin-can"
     topics: ["rust", "cli", "p2p", "webrtc"]
   - name: em
