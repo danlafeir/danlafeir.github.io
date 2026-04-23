@@ -3,14 +3,16 @@ title: "Hi, I'm Dan Lafeir"
 subtitle: Software builder
 ---
 
-I'm a paint drip engineer who swings on the engineer/manager pendulum — building deep expertise across multiple domains rather than settling into a single lane.
+I enjoy the craft of software development and appreciate how much AI has unlocked creativity for me.
 
-I approach problems through a systems thinking lens: understanding how the parts interact before prescribing solutions, and architecting for scale by addressing root causes rather than symptoms. The goal is software that teams can actually reason about and evolve — not just software that ships.
+I approach problems through a systems thinking lens: understanding how the socio-technical parts interact. I know that "all models are broken" but I am constantly trying to develop and refine my mental models for my work (and life if I am being honest). Candidly, I can struggle when my perception of something is inconsistent.
 
-When I'm not writing code, I write about the things I observe in software teams — the habits, patterns, and tradeoffs that quietly shape how people work.
+I see this often in localized optimizations for a team or leader. I appreciate a system needs to be flexible and there are nuances to change. At a minimum, actions and decisions need to be equitable and rationalized. This is the leadership style that I focus bringing to a team. 
+
+When I'm not building software, I like to play board games, learn things (currently an improv student a Second City), and be a father. 
 
 Feel free to explore my [writing](/blog), [engineering playbook](/playbook), [projects](/projects), or [resume](/resume). You can also find me on [GitHub](https://github.com/danlafeir) and [LinkedIn](https://linkedin.com/in/danlafeir).
 
 ---
 
-I think a lot about paint drip engineers and the engineer/manager pendulum.
+I think a lot about ideas of [paint drip people](https://tidyfirst.substack.com/p/paint-drip-people) and the [engineer/manager pendulum](https://charity.wtf/2017/05/11/the-engineer-manager-pendulum/).
