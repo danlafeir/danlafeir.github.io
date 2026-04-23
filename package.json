@@ -4,8 +4,8 @@
   "description": "Daniel Lafeir's personal website",
   "version": "0.1.0",
   "dependencies": {
-    "@fontsource/merriweather": "^5.2.11",
     "@fontsource-variable/montserrat": "^5.2.8",
+    "@fontsource/merriweather": "^5.2.11",
     "gatsby": "^5.16.1",
     "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-manifest": "^5.16.0",
@@ -21,7 +21,7 @@
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
-    "prettier": "^3.8.1"
+    "prettier": "^3.8.3"
   },
   "scripts": {
     "prepare": "git config core.hooksPath .githooks",
