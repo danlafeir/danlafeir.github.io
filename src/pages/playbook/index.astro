@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const SECTION_ORDER = [
+  'Career Management',
+  'Recruiting',
+  'Recurring Meetings',
+  'Team Tools',
+  'Technical Leadership',
+];
+
+const allPages = await getCollection('playbook');
+
+const sections = SECTION_ORDER.reduce((acc, section) => {
+  const sectionPages = allPages
+    .filter(p => p.data.section === section)
+    .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+  if (sectionPages.length > 0) acc[section] = sectionPages;
+  return acc;
+}, {} as Record<string, typeof allPages>);
+---
+
+<Layout title="Engineering Playbook" description="Patterns and practices for building software teams that work.">
+  <div class="page-header">
+    <h1 class="page-title">Engineering Playbook</h1>
+    <p class="page-subtitle">Patterns and practices for building software teams that work.</p>
+  </div>
+
+  <p style="color: var(--color-text-muted); margin-top: 0; margin-bottom: 2.5rem; font-size: 0.95rem;">
+    This playbook reflects how I think about engineering leadership — career
+    development, team operations, technical practices, and recruiting. It's
+    a living document, drawn from real experience and the work of people I
+    respect.
+  </p>
+
+  {Object.entries(sections).map(([section, pages]) => (
+    <section class="playbook-section">
+      <h2 class="playbook-section-title">{section}</h2>
+      <ul class="playbook-list">
+        {pages.map(page => (
+          <li class="playbook-list-item">
+            <a href={`/playbook/${page.id}/`} class="playbook-link">
+              <span class="playbook-link-title">{page.data.title}</span>
+              {page.data.description && (
+                <span class="playbook-link-desc">{page.data.description}</span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  <div class="playbook-source">
+    <a href="https://github.com/danlafeir/engineering_leadership_playbook" target="_blank" rel="noopener noreferrer">
+      View source on GitHub →
+    </a>
+  </div>
+</Layout>

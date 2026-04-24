@@ -1,0 +1,70 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const pages = (await getCollection('playbook'))
+    .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+  return pages.map((page, index) => {
+    const sectionPages = pages.filter(p => p.data.section === page.data.section);
+    const sectionIndex = sectionPages.indexOf(page);
+
+    return {
+      params: { slug: page.id },
+      props: {
+        page,
+        previous: sectionPages[sectionIndex - 1] ?? null,
+        next: sectionPages[sectionIndex + 1] ?? null,
+      },
+    };
+  });
+}
+
+const { page, previous, next } = Astro.props;
+const { Content } = await render(page);
+---
+
+<Layout title={page.data.title} description={page.data.description}>
+  <div class="playbook-breadcrumb">
+    <a href="/playbook/">Playbook</a>
+    <span>/</span>
+    <span>{page.data.section}</span>
+  </div>
+
+  <article>
+    <header class="blog-post-header">
+      <h1>{page.data.title}</h1>
+      {page.data.description && (
+        <p style="color: var(--color-text-muted); margin-top: 0.5rem; font-size: 1rem;">
+          {page.data.description}
+        </p>
+      )}
+    </header>
+    <hr />
+    <section class="blog-post-body">
+      <Content />
+    </section>
+  </article>
+
+  <nav class="blog-post-nav">
+    <ul>
+      <li>
+        {previous && (
+          <a href={`/playbook/${previous.id}/`} rel="prev">← {previous.data.title}</a>
+        )}
+      </li>
+      <li>
+        {next && (
+          <a href={`/playbook/${next.id}/`} rel="next">{next.data.title} →</a>
+        )}
+      </li>
+    </ul>
+  </nav>
+
+  <div style="margin-top: 2rem;">
+    <a href="/playbook/" style="font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600;">
+      ← Playbook
+    </a>
+  </div>
+</Layout>

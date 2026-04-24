@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('pages', 'resume');
+const {
+  title, pronouns, location, intro, currentStatus,
+  summary, experience, technicalProficiencyText, skills, education,
+} = entry!.data as any;
+---
+
+<Layout title="Resume">
+  <div class="page-header">
+    <div class="resume-title-row">
+      <h1 class="page-title">
+        {title}{' '}
+        <span style="font-weight: 400; font-size: 1.1rem; color: var(--color-text-muted);">({pronouns})</span>
+      </h1>
+      <button class="resume-download-link no-print" id="download-pdf">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download PDF
+      </button>
+    </div>
+    <p class="page-subtitle">
+      {location}{' · '}
+      <a href="https://linkedin.com/in/danlafeir" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      {' · '}
+      <a href="https://github.com/danlafeir" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+  </div>
+
+  <div class="about-intro" style="margin-bottom: 2.5rem;">
+    <p>{intro}</p>
+    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin: 0;">{currentStatus}</p>
+  </div>
+
+  <section class="resume-section">
+    <h2 class="resume-section-title">Summary</h2>
+    <ul class="resume-entry-body" style="padding-left: 1.25rem; margin: 0;">
+      {summary.map((item: string) => <li>{item}</li>)}
+    </ul>
+  </section>
+
+  <section class="resume-section" id="experience">
+    <h2 class="resume-section-title">Experience</h2>
+    {experience.map((entry: any) => (
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <h3 class="resume-entry-title">{entry.title}</h3>
+          {entry.date && <span class="resume-entry-date">{entry.date}</span>}
+        </div>
+        {entry.company && <p class="resume-entry-subtitle">{entry.company}</p>}
+        <div class="resume-entry-body">
+          {entry.intro && <p>{entry.intro}</p>}
+          {entry.bullets?.length > 0 && (
+            <ul>
+              {entry.bullets.map((b: string) => <li>{b}</li>)}
+            </ul>
+          )}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section class="resume-section">
+    <h2 class="resume-section-title">Technical Proficiency</h2>
+    <p class="resume-entry-body">{technicalProficiencyText}</p>
+    <ul class="skills-list" style="margin-top: 1rem;">
+      {skills.map((skill: string) => <li class="skill-tag">{skill}</li>)}
+    </ul>
+  </section>
+
+  <section class="resume-section">
+    <h2 class="resume-section-title">Education</h2>
+    {education.map((entry: any) => (
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <h3 class="resume-entry-title">{entry.title}</h3>
+          {entry.date && <span class="resume-entry-date">{entry.date}</span>}
+        </div>
+        {entry.subtitle && <p class="resume-entry-subtitle">{entry.subtitle}</p>}
+      </div>
+    ))}
+  </section>
+</Layout>
+
+<script>
+  document.getElementById('download-pdf')?.addEventListener('click', () => window.print());
+</script>
