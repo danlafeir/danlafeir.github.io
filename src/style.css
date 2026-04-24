@@ -173,9 +173,13 @@ hr {
 /* ── Main content ── */
 .main-content {
   flex: 1;
-  padding: 3rem 3.5rem;
+  min-width: 0;
+}
+
+.content-inner {
   max-width: 780px;
   margin: 0 auto;
+  padding: 3rem 3.5rem;
 }
 
 /* ── Page header ── */
@@ -574,7 +578,7 @@ hr {
 
   .sidebar { display: none; }
 
-  .main-content {
+  .content-inner {
     padding: 0;
     max-width: 100%;
   }
@@ -858,7 +862,7 @@ hr {
     justify-content: flex-start;
   }
 
-  .main-content { padding: 2rem 1.25rem; }
+  .content-inner { padding: 2rem 1.25rem; }
 
   .page-title { font-size: 1.6rem; }
 }

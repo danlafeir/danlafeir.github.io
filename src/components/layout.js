@@ -143,7 +143,9 @@ const Layout = ({ location, children }) => {
       </aside>
 
       <main className="main-content">
-        {children}
+        <div className="content-inner">
+          {children}
+        </div>
       </main>
     </div>
   )
