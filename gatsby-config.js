@@ -75,7 +75,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/profile_pic.png`,
+        icon: `src/images/icon.png`,
       },
     },
   ],
