@@ -356,6 +356,12 @@ hr {
   font-style: italic;
 }
 
+.blog-post-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Post navigation */
 .blog-post-nav {
   margin-top: 3rem;

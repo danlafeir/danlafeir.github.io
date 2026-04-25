@@ -1,10 +1,11 @@
 ---
-draft: true
 title: Engineer Interview Process
 section: Recruiting
 description: A three-stage interview workflow for evaluating software engineers, including guidance on pair programming formats.
 order: 1
 ---
+
+![interview workflow](/images/playbook/engineer_workflow.png)
 
 ## Stages
 
