@@ -10,12 +10,11 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Dan Lafeir's personal site — blog, projects, and resume." } = Astro.props;
+const { title, description = "Dan Lafeir's personal site — projects, playbook, and resume." } = Astro.props;
 const pathname = Astro.url.pathname;
 
 const navLinks = [
   { href: '/', label: 'About' },
-  { href: 'https://danlafeir.substack.com/', label: 'Blog', external: true },
   { href: '/playbook/', label: 'Playbook' },
   { href: '/projects/', label: 'Projects' },
   { href: '/resume/', label: 'Resume' },

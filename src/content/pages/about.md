@@ -11,7 +11,7 @@ I see this often in localized optimizations for a team or leader. I appreciate a
 
 When I'm not building software, I like to play board games, learn things (currently an improv student a Second City), and be a father. 
 
-Feel free to explore my [writing](/blog), [engineering playbook](/playbook), [projects](/projects), or [resume](/resume). You can also find me on [GitHub](https://github.com/danlafeir) and [LinkedIn](https://linkedin.com/in/danlafeir).
+Feel free to explore my [engineering playbook](/playbook), [projects](/projects), or [resume](/resume). You can also find me on [GitHub](https://github.com/danlafeir) and [LinkedIn](https://linkedin.com/in/danlafeir).
 
 ---
 
