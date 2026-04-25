@@ -9,7 +9,7 @@ I approach problems through a systems thinking lens: understanding how the socio
 
 I see this often in localized optimizations for a team or leader. I appreciate a system needs to be flexible and there are nuances to change. At a minimum, actions and decisions need to be equitable and rationalized. This is the leadership style that I focus bringing to a team. 
 
-When I'm not building software, I like to play board games, learn things (currently an improv student a Second City), and be a father. 
+When I'm not building software, I like to play board games, learn things (currently an improv student a [Second City](https://www.secondcity.com/chicago)), and be a father. 
 
 Feel free to explore my [engineering playbook](/playbook), [projects](/projects), or [resume](/resume). You can also find me on [GitHub](https://github.com/danlafeir) and [LinkedIn](https://linkedin.com/in/danlafeir).
 
