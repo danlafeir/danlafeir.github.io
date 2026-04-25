@@ -15,7 +15,7 @@ const pathname = Astro.url.pathname;
 
 const navLinks = [
   { href: '/', label: 'About' },
-  { href: '/blog/', label: 'Blog' },
+  { href: 'https://danlafeir.substack.com/', label: 'Blog', external: true },
   { href: '/playbook/', label: 'Playbook' },
   { href: '/projects/', label: 'Projects' },
   { href: '/resume/', label: 'Resume' },
@@ -49,7 +49,7 @@ function isActive(href: string) {
               alt="Dan Lafeir"
             />
             <p class="sidebar-name">Dan Lafeir</p>
-            <p class="sidebar-tagline">Software Engineer</p>
+            <p class="sidebar-tagline">Builder, Leader, Adaptable</p>
           </div>
 
           <button
@@ -73,9 +73,13 @@ function isActive(href: string) {
         <div class="sidebar-collapsible">
           <nav>
             <ul class="sidebar-nav">
-              {navLinks.map(({ href, label }) => (
+              {navLinks.map(({ href, label, external }) => (
                 <li>
-                  <a href={href} class={isActive(href) ? 'active' : ''}>{label}</a>
+                  <a
+                    href={href}
+                    class={!external && isActive(href) ? 'active' : ''}
+                    {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >{label}</a>
                 </li>
               ))}
             </ul>

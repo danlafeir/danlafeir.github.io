@@ -1,6 +1,5 @@
-# Gatsby build output
-public/
-.cache/
+# Astro 
+dist/**
 
 # Node
 node_modules/
@@ -12,11 +11,6 @@ yarn-error.log*
 .npm
 .yarn-integrity
 
-# Jekyll (no longer used)
-_site/
-.jekyll-cache/
-.jekyll-metadata
-Gemfile.lock
 
 # OS
 .DS_Store

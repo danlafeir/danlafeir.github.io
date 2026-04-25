@@ -1,14 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getEntry, getCollection, render } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 
 const about = await getEntry('pages', 'about');
 const { Content } = await render(about!);
 const { title, subtitle } = about!.data as any;
-
-const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3);
 ---
 
 <Layout title="About">
@@ -21,27 +17,13 @@ const posts = (await getCollection('blog'))
     <Content />
   </div>
 
-  {posts.length > 0 && (
-    <section style="margin-top: 2.5rem">
-      <h2 style="font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
-        Recently Updated
-      </h2>
-      <ol class="post-list">
-        {posts.map(post => (
-          <li class="post-list-item">
-            <h3 style="font-family: var(--font-sans); font-weight: 700; font-size: 1.1rem; margin: 0 0 0.3rem; line-height: 1.3;">
-              <a href={`/blog/${post.id}/`}>{post.data.title}</a>
-            </h3>
-            <p class="post-meta">
-              {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-            </p>
-            <p class="post-excerpt">{post.data.description}</p>
-          </li>
-        ))}
-      </ol>
-      <a href="/blog/" style="font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600;">
-        All posts →
-      </a>
-    </section>
-  )}
+  <section style="margin-top: 2.5rem">
+    <h2 style="font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
+      Writing
+    </h2>
+    <p style="margin: 0 0 0.75rem;">I write about software, teams, and craft on Substack.</p>
+    <a href="https://danlafeir.substack.com/" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600;">
+      Read on Substack →
+    </a>
+  </section>
 </Layout>

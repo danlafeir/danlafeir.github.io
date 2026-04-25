@@ -8,10 +8,10 @@ order: 1
 ## Principles
 
 1. **Enhanced segmentation** creates more advancement opportunities without inflating titles.
-2. **Salary is independent of senior leadership roles** — ranges widen at higher levels rather than requiring a management track to grow compensation.
-3. **The Engineering Pendulum is supported by the salary structure** — moving between IC and management shouldn't require a financial sacrifice.
-4. **Architecture is a competency, not a role** — the ability to reason architecturally should be developed across all levels, not gatekept behind a title.
-5. **Individual contributors report to peer-level or more senior engineering managers** — ICs should never report up to someone who can't evaluate their technical work.
+2. **Wider salary ranges for senior leadership roles** ranges widen at higher levels rather than requiring a management track to grow compensation.
+3. **The Engineering Pendulum is supported by the salary structure** moving between IC and management shouldn't require a financial sacrifice.
+4. **Architecture is a competency, not a role** the ability to reason architecturally should be developed across all levels, not gatekept behind a title. 
+5. **Engineering individual contributors should be peers engineering management at different levels** creating healther, honest feedback loops about the technical quality of the system.
 
 ## Compensation Structure
 
