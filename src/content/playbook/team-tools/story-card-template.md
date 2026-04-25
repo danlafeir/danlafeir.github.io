@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Story Card Template
 section: Team Tools
 description: A standard template for defining work scope, acceptance criteria, and technical context.
