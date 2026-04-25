@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const pages = (await getCollection('playbook'))
+  const pages = (await getCollection('playbook', ({ data }) => !data.draft))
     .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
   return pages.map((page, index) => {

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Ways of Working Template
 section: Team Tools
 description: A living document template for team ceremonies, workflow stages, and operating norms.
@@ -8,6 +9,7 @@ order: 2
 *This is a template. Copy and adapt it for your team. It should live somewhere everyone can edit it.*
 
 ---
+draft: true
 
 ## Ceremonies
 
@@ -39,6 +41,7 @@ Technical knowledge sharing, architectural discussions, and communication skill 
 Run when new work begins. Present problem context, architectural overview, and story map. Prefer in-person or synchronous video.
 
 ---
+draft: true
 
 ## Flow of Work
 
@@ -53,6 +56,7 @@ Run when new work begins. Present problem context, architectural overview, and s
 **Spikes** are timeboxed research cards. Define the question you're answering and the timebox upfront. The output is a decision or a recommendation, not code.
 
 ---
+draft: true
 
 ## Core Practices
 

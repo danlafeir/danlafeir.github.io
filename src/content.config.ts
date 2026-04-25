@@ -8,6 +8,7 @@ const playbook = defineCollection({
     section: z.string(),
     description: z.string().optional(),
     order: z.number().optional(),
+    draft: z.boolean().optional(),
   }),
 });
 

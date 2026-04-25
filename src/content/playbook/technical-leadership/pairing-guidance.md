@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Pairing Guidance
 section: Technical Leadership
 description: How to run pair programming as a team practice, not a formality — including the anchor rotation model.

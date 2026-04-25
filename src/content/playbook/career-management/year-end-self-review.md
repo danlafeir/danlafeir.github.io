@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Year-End Self-Review Guidance
 section: Career Management
 description: How to write a self-review that focuses on impact rather than activity, and actually influences your career trajectory.

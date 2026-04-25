@@ -10,7 +10,7 @@ const SECTION_ORDER = [
   'Technical Leadership',
 ];
 
-const allPages = await getCollection('playbook');
+const allPages = await getCollection('playbook', ({ data }) => !data.draft);
 
 const sections = SECTION_ORDER.reduce((acc, section) => {
   const sectionPages = allPages
