@@ -5,9 +5,7 @@ subtitle: Software builder
 
 I enjoy the craft of software development and appreciate how much AI has unlocked creativity for me.
 
-I approach problems through a systems thinking lens: understanding how the socio-technical parts interact. I know that "all models are broken" but I am constantly trying to develop and refine my mental models for my work (and life if I am being honest). Candidly, I can struggle when my perception of something is inconsistent.
-
-I see this often in localized optimizations for a team or leader. I appreciate a system needs to be flexible and there are nuances to change. At a minimum, actions and decisions need to be equitable and rationalized. This is the leadership style that I focus bringing to a team. 
+I approach problems through a systems thinking lens, looking at how the socio-technical parts interact. I know that "all models are wrong," but I'm constantly refining mine, for work and life. That shows up in how I lead: I try to make sure decisions are applied consistently and explained clearly, even when flexibility is warranted.
 
 When I'm not building software, I like to play board games, learn things (currently an improv student a [Second City](https://www.secondcity.com/chicago)), and be a father. 
 
