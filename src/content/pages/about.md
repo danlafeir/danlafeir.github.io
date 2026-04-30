@@ -7,6 +7,8 @@ I enjoy the craft of software development and appreciate how much AI has unlocke
 
 I approach problems through a systems thinking lens, looking at how the socio-technical parts interact. I know that "all models are wrong," but I'm constantly refining mine, for work and life. That shows up in how I lead: I try to make sure decisions are applied consistently and explained clearly, even when flexibility is warranted.
 
+I believe building software is a team sport where you need to coach muscles and instincts. You need to practice discipline, set clear expecations about different roles, and constantly focus the team around a shared goal. Specifically, I have found it effective to create a repeatable mantra about what we are trying to deliever in the near term. When you ask anyone on the team, they should be able to tell it to you. 
+
 When I'm not building software, I like to play board games, learn things (currently an improv student a [Second City](https://www.secondcity.com/chicago)), and be a father. 
 
 Feel free to explore my [engineering playbook](/playbook), [projects](/projects), or [resume](/resume). You can also find me on [GitHub](https://github.com/danlafeir) and [LinkedIn](https://linkedin.com/in/danlafeir).

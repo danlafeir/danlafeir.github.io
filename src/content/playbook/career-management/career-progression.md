@@ -10,6 +10,7 @@ order: 1
 *Here is an example of the what a breakdown of career progression*
 
 ## Principles
+*These are the principles I would attempt to bring to an organization*
 
 1. **Enhanced segmentation in levels** creates more advancement opportunities without inflating titles.
 2. **Wider salary ranges for senior leadership roles** ranges widen at higher levels rather than requiring a management track to grow compensation.
@@ -28,3 +29,4 @@ order: 1
 
 - [The Engineer/Manager Pendulum](https://charity.wtf/2017/05/11/the-engineer-manager-pendulum/) — Charity Majors on career flexibility between IC and management tracks.
 - [An Elegant Puzzle](https://lethain.com/elegant-puzzle/) — Will Larson on engineering management and organizational design.
+- [Architects, Anti-Patterns, and Organizational Fuckery](https://charity.wtf/2023/03/09/architects-anti-patterns-and-organizational-fuckery/)
