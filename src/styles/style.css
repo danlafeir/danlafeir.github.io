@@ -524,6 +524,14 @@ hr {
   margin: 0 0 0.6rem;
 }
 
+.resume-entry-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin: 0 0 0.6rem;
+}
+
 .resume-entry-body {
   font-size: 0.925rem;
   line-height: 1.7;

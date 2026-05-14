@@ -75,6 +75,7 @@ skills:
 education:
   - title: "University of California, Los Angeles — School of Law"
     subtitle: "Masters of Legal Studies · Focus in Law and Technology"
+    tagline: "I wanted to explore the intersection of technology and the law"
     date: "Sept 2021 – May 2023"
   - title: "University of Michigan — College of Literature, Science, and the Arts"
     subtitle: "Bachelor of Science in Computer Science, Financial Mathematics, and Economics"
