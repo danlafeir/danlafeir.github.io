@@ -3,7 +3,7 @@ title: Daniel Lafeir
 pronouns: he/him
 location: Chicago, IL
 intro: 'Engineering leader with 12 years of experience scaling teams and organizations through fast, insight-driven feedback loops. I have built my career moving fluidly between deep technical work and organizational leadership, and I bring the same systems thinking to the people and teams I develop.'
-currentStatus: "Looking for a senior engineering leadership role with broad organizational scope — the kind of problems that require aligning people, systems, and strategy at the same time."
+currentStatus: "Looking for a senior engineering leadership role with broad organizational scope: the kind of problems that require aligning people, systems, and strategy at the same time."
 summary:
   - "8 years in engineering leadership, currently managing 3 teams and 22 engineers across 2 levels of management"
   - "Track record delivering outcomes in complex domains: e-commerce, search, data engineering, and platform infrastructure"
@@ -12,7 +12,7 @@ experience:
   - title: Senior Engineering Manager
     company: "Grainger · Chicago, IL"
     date: "Sept 2024 – Present"
-    intro: "Leading three teams and one manager building systems in the Order domain — search of order data, asynchronous order workflows, payment capabilities, and analytical data products."
+    intro: "Leading three teams and one manager building systems in the Order domain: search of order data, asynchronous order workflows, payment capabilities, and analytical data products."
     bullets:
       - "Own headcount planning and hiring decisions across 3 teams, manage contractor staffing, and lead the annual compensation review cycle for a 22-person organization."
       - "Reshaped 3 teams through targeted hiring, performance management, and internal promotions to improve delivery flow, strengthen engineering discipline, and reduce production incidents." 
@@ -33,7 +33,7 @@ experience:
   - title: "Lead Consultant · Technical Account Principal"
     company: Thoughtworks
     date: "May 2019 – Aug 2023"
-    intro: "Rotated between technical lead, technical account manager, director of engineering, and senior IC roles depending on client and project need."
+    intro: "Served in director of engineering, technical account principal, and technical lead capacities across clients, consistently operating at organizational scope."
     bullets:
       - "Led delivery of a Solr-based search platform for specific legal subdomains, like case-law, and introduced commit-level search quality measurement (DCG) as an engineering standard to protect relevance at every deploy."
       - "Advised VP of Engineering and Directors on rolling out engineering standards across the org and identified opportunities like a ML solution to make customer data more usable for sellers."
@@ -50,7 +50,7 @@ experience:
   - title: Consultant
     company: Thoughtworks
     date: "June 2015 – June 2017"
-    intro: "IC across multiple frontend projects. Contributed to an open source React Native image rendering library and founded a JavaScript Frontend forum that grew into an organization-wide technical community. Presented a novel ReactJS testing strategy centered on testing components as the unit under test."
+    intro: "Identified a knowledge-sharing gap across client teams and founded a JavaScript Frontend forum that grew into an organization-wide technical community, while building hands-on frontend expertise across multiple projects and contributing to open source React Native tooling."
     bullets: []
   - title: Developer Consultant
     company: Technology Services Group
