@@ -3,7 +3,7 @@ title: Daniel Lafeir
 pronouns: he/him
 location: Chicago, IL
 intro: 'I am an engineering leader with 12 years of experience across the multiple technical and business domains. My leadership style is built on solving problems through a systems thinking lens, building fast feedback loops, strong organizational relationships and prioritizing working software over slideware'
-currentStatus: "Looking to move back into an IC role in a technically challenging domain. I enjoy leading teams and creating space for people to be successful, but I'm ready to get back to more hands-on building"
+currentStatus: "Looking for a senior engineering leadership role with broad organizational scope — the kind of problems that require aligning people, systems, and strategy at the same time."
 summary:
   - "12 years building software professionally"
   - "8 years leading teams — currently managing 22 people, 2 years managing managers"
