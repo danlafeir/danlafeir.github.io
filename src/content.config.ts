@@ -16,4 +16,14 @@ const pages = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/pages' }),
 });
 
-export const collections = { playbook, pages };
+const ideas = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/ideas' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    date: z.string().optional(),
+    draft: z.boolean().optional(),
+  }),
+});
+
+export const collections = { playbook, pages, ideas };

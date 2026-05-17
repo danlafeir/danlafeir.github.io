@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const ideas = (await getCollection('ideas', ({ data }) => !data.draft))
+  .sort((a, b) => (b.data.date ?? '').localeCompare(a.data.date ?? ''));
+---
+
+<Layout title="Ideas">
+  <header class="blog-post-header">
+    <h1>Ideas</h1>
+    <p style="color: var(--color-text-muted); font-size: 1rem;">
+      Longer-form thinking. Rough at the edges.
+    </p>
+  </header>
+  <ul class="post-list">
+    {ideas.map((idea) => (
+      <li class="post-list-item">
+        <a href={`/ideas/${idea.id}/`}>{idea.data.title}</a>
+        {idea.data.description && <p>{idea.data.description}</p>}
+      </li>
+    ))}
+  </ul>
+</Layout>

@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const ideas = await getCollection('ideas', ({ data }) => !data.draft);
+  return ideas.map((idea) => ({
+    params: { slug: idea.id },
+    props: { idea },
+  }));
+}
+
+const { idea } = Astro.props;
+const { Content } = await render(idea);
+---
+
+<Layout title={idea.data.title} description={idea.data.description}>
+  <article>
+    <header class="blog-post-header">
+      <h1>{idea.data.title}</h1>
+      {idea.data.description && (
+        <p style="color: var(--color-text-muted); margin-top: 0.5rem; font-size: 1rem;">
+          {idea.data.description}
+        </p>
+      )}
+    </header>
+    <hr />
+    <section class="blog-post-body">
+      <Content />
+    </section>
+  </article>
+
+  <div style="margin-top: 3rem;">
+    <a href="/ideas/" style="font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600;">
+      ← Ideas
+    </a>
+  </div>
+</Layout>
