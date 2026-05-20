@@ -184,9 +184,7 @@ hr {
 
 /* ── Page header ── */
 .page-header {
-  margin-bottom: 2.5rem;
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .page-title {
@@ -484,8 +482,8 @@ hr {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 0.5rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.5rem;
   margin: 0 0 1.25rem;
 }
 
@@ -606,7 +604,7 @@ hr {
   }
 
   body {
-    font-size: 12pt;
+    font-size: 10pt;
     line-height: 1.35;
     color: #000;
     background: #fff;
@@ -615,20 +613,18 @@ hr {
   a { color: #000; text-decoration: none; }
 
   .page-header {
-    border-bottom-color: #ccc;
     margin-bottom: 0.5rem;
-    padding-bottom: 0.4rem;
   }
 
   .page-title {
-    font-size: 16pt;
+    font-size: 14pt;
     margin-bottom: 0.2rem;
   }
 
-  .page-subtitle { font-size: 12pt; }
+  .page-subtitle { font-size: 10pt; }
 
   .about-intro {
-    font-size: 12pt;
+    font-size: 10pt;
     line-height: 1.35;
     margin-bottom: 0.75rem !important;
   }
@@ -636,9 +632,9 @@ hr {
   .resume-section { margin-bottom: 0.6rem; }
 
   .resume-section-title {
-    font-size: 8pt;
-    border-bottom-color: #ccc;
-    padding-bottom: 0.2rem;
+    font-size: 7pt;
+    border-top-color: #ccc;
+    padding-top: 0.2rem;
     margin-bottom: 0.4rem;
   }
 
@@ -649,18 +645,18 @@ hr {
     margin-bottom: 0;
   }
 
-  .resume-entry-title { font-size: 12pt; }
+  .resume-entry-title { font-size: 10pt; }
 
-  .resume-entry-date { font-size: 10pt; }
+  .resume-entry-date { font-size: 8pt; }
 
   .resume-entry-subtitle {
-    font-size: 10pt;
+    font-size: 8pt;
     margin: 0 0 0.1rem;
     page-break-after: avoid;
   }
 
   .resume-entry-body {
-    font-size: 12pt;
+    font-size: 10pt;
     line-height: 1.35;
   }
 
@@ -682,7 +678,7 @@ hr {
   .skills-list { gap: 0.25rem; }
 
   .skill-tag {
-    font-size: 9pt;
+    font-size: 8pt;
     padding: 0.1rem 0.5rem;
   }
 }

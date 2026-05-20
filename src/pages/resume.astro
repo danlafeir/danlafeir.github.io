@@ -4,7 +4,7 @@ import { getEntry } from 'astro:content';
 
 const entry = await getEntry('pages', 'resume');
 const {
-  title, pronouns, location, intro, currentStatus,
+  title, pronouns, location,
   summary, experience, technicalProficiencyText, skills, education,
 } = entry!.data as any;
 ---
@@ -33,11 +33,6 @@ const {
       {' · '}
       <a href="https://github.com/danlafeir" target="_blank" rel="noopener noreferrer">GitHub</a>
     </p>
-  </div>
-
-  <div class="about-intro" style="margin-bottom: 2.5rem;">
-    <p>{intro}</p>
-    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin: 0;">{currentStatus}</p>
   </div>
 
   <section class="resume-section">

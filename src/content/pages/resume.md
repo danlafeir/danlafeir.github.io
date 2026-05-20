@@ -2,8 +2,8 @@
 title: Daniel Lafeir
 pronouns: he/him
 location: Chicago, IL
-intro: 'Engineering leader with 12 years of experience scaling teams and organizations through fast, insight-driven feedback loops. I have built my career moving fluidly between deep technical work and organizational leadership, and I bring the same systems thinking to the people and teams I develop.'
-currentStatus: "Looking for a senior engineering leadership role with broad organizational scope: the kind of problems that require aligning people, systems, and strategy at the same time."
+intro: ''
+currentStatus: ''
 summary:
   - "8 years in engineering leadership, currently managing 3 teams and 22 engineers across 2 levels of management"
   - "Track record delivering outcomes in complex domains: e-commerce, search, data engineering, and platform infrastructure"
