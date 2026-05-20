@@ -6,8 +6,8 @@ intro: ''
 currentStatus: ''
 summary:
   - "8 years in engineering leadership, currently managing 3 teams and 22 engineers across 2 levels of management"
-  - "Track record delivering outcomes in complex domains: e-commerce, search, data engineering, and platform infrastructure"
-  - "Deep IC background that sharpens how I build teams, develop engineers, and make technical tradeoffs at the organizational level"
+  - "12 years in engineering delivering outcomes in a variety of domains: e-commerce, search, data engineering, and platform infrastructure"
+  - "Leverages IC and architectural experience to shape team structure and delivery, surfacing misalignment in system design and organizational friction."
 experience:
   - title: Senior Engineering Manager
     company: "Grainger · Chicago, IL"
