@@ -4,7 +4,7 @@ description: "Building technology organizations resilient to change requires ali
 date: "2026-05-15"
 ---
 
-Technology organizations that can effectively absorb change tend to share a common trait: how teams communicate and how the business works is embedded in the design of the organization. I will present to you three complementary ideas to make the case for designing it intentionally. Conway's Law, first articulated in 1968, observes that systems mirror the communication structures of the organizations that build them. Eric Evans's *Domain-Driven Design* provides a framework for modeling the business domain precisely enough to build software that genuinely reflects it. And *Team Topologies* by Matthew Skelton and Manuel Pais gives us the vocabulary for structuring teams around that model. Together, they form a model to build an organization optimized for change.
+Technology organizations that can effectively absorb change tend to share a common trait: how teams communicate and how the business works is embedded in the design of the organization. I will present to you three complementary ideas to enable this design. Conway's Law, first articulated in 1968, observes that systems mirror the communication structures of the organizations that build them. Eric Evans's *Domain-Driven Design* provides a framework for modeling the business domain precisely enough to build software that genuinely reflects it. And *Team Topologies* by Matthew Skelton and Manuel Pais gives us the vocabulary for structuring teams around that model. Together, they form a model to build an organization optimized for change.
 
 ## The System You Have Is the Organization You Are
 
@@ -14,31 +14,18 @@ Conway's Law, as Fred Brooks later named it in *The Mythical Man-Month*,<sup>[2]
 
 Most engineering leaders bump up against Conway's Law when they want to change their system. They plan a new architecture, draw new service boundaries, restructure a team, and then find the pieces drifting back toward where they started. The problem is socio-technical: it is straightforward to implement new software, but if the communication patterns between teams don't change, the new system will eventually mirror the old one. The architecture is downstream of the org chart.
 
-The question is: how do we evolve our systems with this as a design input?
-
-## The Inverse Conway Maneuver
-
-In 2015, ThoughtWorks popularized a term that had been circulating in systems-thinking circles: the *Inverse Conway Maneuver*. The idea is as direct as it sounds. If Conway's Law says your architecture will mirror your org structure, then you can reverse the direction: design your org structure to match the architecture you want, and the architecture will follow.
-
-This is the synthesis point of all three frameworks.
-
-DDD gives you the *target architecture*: a set of bounded contexts with explicit relationships, their own models, and clear integration contracts. Team Topologies gives you the *vocabulary* for structuring teams around that architecture: team types, cognitive load limits, interaction modes as first-class design decisions. Conway's Law gives you the *mechanism*: the social structure produces the technical structure, whether you intend it or not.
-
-The Inverse Conway Maneuver is the intentional use of that mechanism. You don't wait to discover that your microservices are tangled because two teams shared a codebase. You draw the bounded contexts first, name the team types that should own each one, declare the interaction modes between adjacent contexts, and then you build.
-
-This requires a kind of organizational courage that's easy to underestimate. Restructuring teams to match domain boundaries means disrupting established reporting lines, moving people, and sometimes eliminating roles that exist to mediate between teams that shouldn't need mediation. The refactoring is as much social as technical.
+We need to recognize this as a constraint when designing the organization.
 
 ## Bounded Contexts: Discovering and Defining Boundaries
 
 Eric Evans published *Domain-Driven Design* in 2003,<sup>[3]</sup> drawing on years of consulting work on complex enterprise systems. The book argued that the central challenge in software development is not technical. It is understanding and modeling the business domain well enough to build software that actually reflects it. Evans introduced a set of patterns and practices centered on the domain model: a shared, precise representation of the business, developed collaboratively between engineers and domain experts through a common vocabulary he called the *ubiquitous language*. Modeling the business domains means change in software is a change in business.
 
-The word "customer" in a billing system and the word "customer" in a fulfillment system mean different things. In billing, a customer has payment methods, invoices, and a credit limit. In fulfillment, a customer has a delivery address and a preference for whether to leave packages at the door. These are not just different attributes of the same entity. They represent different *concerns*, different *behaviors*, different *lifecycles*. Mistaking them for a single model creates an inadvertent coupling that makes the system harder to change. These might refer to the same "person" but these two systems need to evolve differently.
+Let's look at an example. The word "customer" in a billing system and the word "customer" in a fulfillment system mean different things. In billing, a customer has payment methods, invoices, and a credit limit. In fulfillment, a customer has a delivery address and a preference for whether to leave packages at the door. These are not just different attributes of the same entity. They represent different *concerns*, different *behaviors*, different *lifecycles*. Mistaking them for a single model creates an inadvertent coupling that makes the system harder to change. These might refer to the same "person" but these two systems need to evolve differently.
 
-Evans called this the *bounded context*: an explicit boundary within which a particular model is consistent and meaningful. Within the boundary, terms have precise definitions. Across the boundary, translation is required: deliberately, explicitly, with care. The *ubiquitous language* of one context does not bleed into another.
-
+Evans called this the *bounded context*: an explicit boundary within which a particular model is consistent and meaningful. Within the boundary, terms have precise definitions. Across the boundary, translation is required: deliberately, explicitly, with care.
 This is not just a modeling technique. It is a recognition that large organizations naturally develop localized grammars, and that those grammars are worth preserving. Consider how a large retailer talks about an "order": to the storefront team it is a submitted cart, to the warehouse it is a pick list, to finance it is a revenue event to be recognized. Each department has developed precise language because imprecision in their context is expensive. The problem is not the different vocabularies. The problem is when a shared system forces them to pretend those vocabularies are the same.
 
-The bounded context is the unit at which a team or set of teams can maintain a coherent system. That makes it a natural input for organizational design: if you can identify where your domain boundaries are, you have a principled basis for deciding where your team boundaries should be.
+The bounded context is the unit at which a team or set of teams can maintain a coherent system. Bounded contexts signal the edges of a domain boundary and can be used as a principled basis for deciding team boundaries.
 
 ## The Four Team Types and What They Actually Own
 
@@ -50,13 +37,13 @@ Matthew Skelton and Manuel Pais, in *Team Topologies*,<sup>[4]</sup> gave us a v
 
 **Enabling teams** help a stream-aligned team overcome obstacles and detect missing capabilities. They're the consultants and coaches of the internal world. They leave rather than staying.
 
-**Complicated-subsystem teams** own areas where significant mathematics, calculation, or technical expertise is needed. They serve stream-aligned teams but require deep specialist knowledge to run.
+**Complicated-subsystem teams** own areas where significaninfrastructure, observability, bt mathematics, calculation, or technical expertise is needed. They serve stream-aligned teams but require deep specialist knowledge to run.
 
-Read through a DDD lens, the mapping is clarifying.
+Let's frame this through Domain-Driven Design.
 
-Stream-aligned teams own *bounded contexts*. They are the natural stewards of a domain model. When a bounded context has coherent ownership, it can have a coherent model. The team's internal ubiquitous language *is* the context's ubiquitous language.
+Stream-aligned teams live within bounded contexts of the business. They are the natural stewards of a domain model and the business objectives.
 
-Platform teams live in technical domains. Infrastructure, observability, build pipelines. These aren't where competitive advantage lives. They're table stakes, and they should be treated as such. The platform team makes the generic domain feel like a solved problem for everyone else.
+Platform teams live in technical domains: infrastructure, observability, build pipelines, etc. These teams aggregate shared technology and design interfaces that scale across the organization. This reduces duplicated efforts, removes friction, and helps the organization better manage cost.
 
 Enabling teams aren't tied to a domain at all. They exist at the boundary between expertise and need. They help stream-aligned teams cross thresholds: learn Kubernetes, adopt event-driven patterns, introduce better testing practices. Then they move on.
 
@@ -79,6 +66,18 @@ If two bounded contexts are actively being carved out, if the boundary itself is
 Similarly, a stream-aligned team consuming a platform service has no business collaborating with the platform team on every feature. That's what the service interface is for. The platform team designs the contract; the stream-aligned team uses it. Collaboration happens at the edges, when the platform needs to understand new use cases, and then it resolves back into service mode.
 
 The mode you choose is not a management decision. It's a domain modeling decision. And making it deliberately means making the domain assumptions explicit.
+
+## The Inverse Conway Maneuver
+
+In 2015, ThoughtWorks popularized a term that had been circulating in systems-thinking circles: the *Inverse Conway Maneuver*. The idea is as direct as it sounds. If Conway's Law says your architecture will mirror your org structure, then you can reverse the direction: design your org structure to match the architecture you want, and the architecture will follow.
+
+This is the synthesis point of all three frameworks.
+
+DDD gives you the *target architecture*: a set of bounded contexts with explicit relationships, their own models, and clear integration contracts. Team Topologies gives you the *vocabulary* for structuring teams around that architecture: team types, cognitive load limits, interaction modes as first-class design decisions. Conway's Law gives you the *mechanism*: the social structure produces the technical structure, whether you intend it or not.
+
+The Inverse Conway Maneuver is the intentional use of that mechanism. You don't wait to discover that your microservices are tangled because two teams shared a codebase. You draw the bounded contexts first, name the team types that should own each one, declare the interaction modes between adjacent contexts, and then you build.
+
+This requires a kind of organizational courage that's easy to underestimate. Restructuring teams to match domain boundaries means disrupting established reporting lines, moving people, and sometimes eliminating roles that exist to mediate between teams that shouldn't need mediation. The refactoring is as much social as technical.
 
 ## Where This Gets Hard
 
