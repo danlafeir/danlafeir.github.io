@@ -39,33 +39,16 @@ Matthew Skelton and Manuel Pais, in *Team Topologies*,<sup>[4]</sup> gave us a v
 
 **Complicated-subsystem teams** own areas where significaninfrastructure, observability, bt mathematics, calculation, or technical expertise is needed. They serve stream-aligned teams but require deep specialist knowledge to run.
 
-Let's frame this through Domain-Driven Design.
+These definitions are Let's frame this through Domain-Driven Design.
 
 Stream-aligned teams live within bounded contexts of the business. They are the natural stewards of a domain model and the business objectives.
 
-Platform teams live in technical domains: infrastructure, observability, build pipelines, etc. These teams aggregate shared technology and design interfaces that scale across the organization. This reduces duplicated efforts, removes friction, and helps the organization better manage cost.
+Complicated-subsystem teams own subdomains that encapsulate a deep technical or business context. The payments engine. The real-time recommendation system. The pricing rules evaluator. These aren't the core domain, but they're not generic either. Their work requires specialize skill or focus that a stream-aligned team can't maintain. This mental model is helpful
+
+Platform teams live in a technical domains: infrastructure, observability, build pipelines, etc. These teams aggregate shared technology and design interfaces that scale across the organization. This reduces duplicated efforts, removes friction, and helps the organization better manage cost.
 
 Enabling teams aren't tied to a domain at all. They exist at the boundary between expertise and need. They help stream-aligned teams cross thresholds: learn Kubernetes, adopt event-driven patterns, introduce better testing practices. Then they move on.
 
-Complicated-subsystem teams often own *supporting subdomains* with unusual technical depth. The payments engine. The real-time recommendation system. The pricing rules evaluator. These aren't the core domain, but they're not generic either. They require specialist attention the stream-aligned team can't sustain.
-
-## Interaction Modes Are the API Between Domains
-
-Team Topologies also defines three interaction modes between teams. These are not relationship types or org-chart edges. They're *protocols*.
-
-**Collaboration** mode is high-bandwidth, high-friction, high-discovery. Two teams work closely together, building shared understanding and, often, discovering where the real domain boundary should be. It's expensive and not meant to last.
-
-**X-as-a-service** mode is the steady state of a mature boundary. One team provides a well-defined interface; another consumes it. The consuming team doesn't need to know how it works. This is low-bandwidth and deliberately so.
-
-**Facilitating** mode is how enabling teams operate. They're not providers and not collaborators in the product sense. They build capacity and then withdraw.
-
-Here's what makes this powerful when combined with DDD: the correct interaction mode between two teams *follows from the relationship between their domains*.
-
-If two bounded contexts are actively being carved out, if the boundary itself is still uncertain, the teams should be in collaboration mode. They need the high-bandwidth channel to discover the seam. Once the boundary is stable and the interface is clear, they should shift to X-as-a-service. The interaction mode is not a fixed property of the relationship; it reflects the maturity of the domain boundary.
-
-Similarly, a stream-aligned team consuming a platform service has no business collaborating with the platform team on every feature. That's what the service interface is for. The platform team designs the contract; the stream-aligned team uses it. Collaboration happens at the edges, when the platform needs to understand new use cases, and then it resolves back into service mode.
-
-The mode you choose is not a management decision. It's a domain modeling decision. And making it deliberately means making the domain assumptions explicit.
 
 ## The Inverse Conway Maneuver
 

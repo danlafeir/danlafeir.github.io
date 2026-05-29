@@ -15,7 +15,7 @@ experience:
     intro: "Leading three teams and one manager building systems in the Order domain: search of order data, asynchronous order workflows, payment capabilities, and analytical data products."
     bullets:
       - "Own headcount planning and hiring decisions across 3 teams, manage contractor staffing, and lead the annual compensation review cycle for a 22-person organization."
-      - "Reshaped 3 teams through targeted hiring, performance management, and internal promotions to improve delivery flow, strengthen engineering discipline, and reduce production incidents." 
+      - "Restructured 3 teams through targeted hiring, performance management, and internal promotions to improve delivery flow, strengthen engineering discipline, and reduce production incidents." 
       - "Built and executed a release strategy with Product to deliver net-new Order software starting with ~6 orders/day for select customers to create a faster feedback loop and surface unknown unknowns."
       - "Unlocked delivery capacity from partner SAP teams, initially claiming no bandwidth, by establishing bi-weekly prioritization sessions that balanced new Order software with a multi-year SAP upgrade."
       - "Delivered 4 Order Data Products for multiple analytical use cases, including research on frequency of orders with damaged products and inconsistent application of customer order settings across systems."
