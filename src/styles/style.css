@@ -321,6 +321,11 @@ hr {
 
 .blog-post-body li { margin-bottom: 0.35rem; }
 
+.blog-post-body li > ul,
+.blog-post-body li > ol {
+  margin: 0.35rem 0 0.6rem;
+}
+
 .blog-post-body code {
   font-size: 0.875em;
   background: #f4f4f2;
