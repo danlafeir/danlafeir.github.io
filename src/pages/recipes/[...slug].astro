@@ -14,6 +14,13 @@ export async function getStaticPaths() {
 const { recipe } = Astro.props;
 const { Content } = await render(recipe);
 const { yield: makes, ingredients } = recipe.data;
+
+const BATCH_SIZES = [
+  { factor: 0.5, label: '½×' },
+  { factor: 1, label: '1×' },
+  { factor: 2, label: '2×' },
+  { factor: 3, label: '3×' },
+];
 ---
 
 <Layout title={recipe.data.title} description={recipe.data.description}>
@@ -28,6 +35,18 @@ const { yield: makes, ingredients } = recipe.data;
     </header>
     <hr />
     <section class="blog-post-body">
+      <div class="batch-control" role="group" aria-label="Batch size" data-batch-control hidden>
+        <span class="batch-control-label">Batch size</span>
+        {BATCH_SIZES.map(({ factor, label }) => (
+          <button
+            type="button"
+            class="batch-btn"
+            data-factor={factor}
+            aria-pressed={String(factor === 1)}
+          >{label}</button>
+        ))}
+      </div>
+
       {makes && (
         <p>Makes <Measure qty={makes.qty} unit={makes.unit} /></p>
       )}
@@ -56,4 +75,25 @@ const { yield: makes, ingredients } = recipe.data;
       ← Recipes
     </a>
   </div>
+
+  <script>
+    import { formatMeasure } from '../../lib/recipe';
+
+    const control = document.querySelector<HTMLElement>('[data-batch-control]');
+    if (control) {
+      const buttons = control.querySelectorAll<HTMLButtonElement>('[data-factor]');
+      const measures = document.querySelectorAll<HTMLElement>('.measure[data-qty]');
+
+      control.hidden = false;
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const factor = Number(button.dataset.factor);
+          measures.forEach((el) => {
+            el.textContent = formatMeasure(Number(el.dataset.qty) * factor, el.dataset.unit);
+          });
+          buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+        });
+      });
+    }
+  </script>
 </Layout>
