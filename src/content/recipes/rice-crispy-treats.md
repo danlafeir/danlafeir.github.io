@@ -1,17 +1,26 @@
 ---
 title: "Rice Crispy Treats"
 description: "Chewy squares made with browned butter, a little vanilla, and salt."
+yield: { qty: 12, unit: square }
+ingredients:
+  - name: unsalted butter
+    measures:
+      - { qty: 1, unit: stick }
+      - { qty: 8, unit: tbsp }
+  - name: mini marshmallows
+    measures:
+      - { qty: 1, unit: bag }
+      - { qty: 10, unit: ounce }
+  - name: vanilla extract
+    measures:
+      - { qty: 1, unit: teaspoon }
+  - name: kosher salt
+    measures:
+      - { qty: 1, unit: teaspoon }
+  - name: crispy rice cereal
+    measures:
+      - { qty: 4.5, unit: cup }
 ---
-
-Makes 12 squares.
-
-## Ingredients
-
-- 1 stick unsalted butter (8 tbsp)
-- 1 bag mini marshmallows (10 ounces)
-- 1 teaspoon vanilla extract
-- 1 teaspoon kosher salt
-- 4.5 cups crispy rice cereal
 
 ## Instructions
 

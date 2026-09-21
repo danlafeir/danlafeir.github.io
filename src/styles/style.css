@@ -326,6 +326,13 @@ hr {
   margin: 0.35rem 0 0.6rem;
 }
 
+.measure {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
 .blog-post-body code {
   font-size: 0.875em;
   background: #f4f4f2;

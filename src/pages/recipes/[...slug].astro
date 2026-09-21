@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import Measure from '../../components/Measure.astro';
 
 export async function getStaticPaths() {
   const recipes = await getCollection('recipes', ({ data }) => !data.draft);
@@ -12,6 +13,7 @@ export async function getStaticPaths() {
 
 const { recipe } = Astro.props;
 const { Content } = await render(recipe);
+const { yield: makes, ingredients } = recipe.data;
 ---
 
 <Layout title={recipe.data.title} description={recipe.data.description}>
@@ -26,6 +28,25 @@ const { Content } = await render(recipe);
     </header>
     <hr />
     <section class="blog-post-body">
+      {makes && (
+        <p>Makes <Measure qty={makes.qty} unit={makes.unit} /></p>
+      )}
+
+      <h2>Ingredients</h2>
+      <ul>
+        {ingredients.map(({ name, measures: [primary, ...alternates] }) => (
+          <li>
+            <Measure qty={primary.qty} unit={primary.unit} /> {name}{
+              alternates.length > 0 && (
+                <>{' ('}{alternates.map((alternate, i) => (
+                  <>{i > 0 && ', '}<Measure qty={alternate.qty} unit={alternate.unit} /></>
+                ))}{')'}</>
+              )
+            }
+          </li>
+        ))}
+      </ul>
+
       <Content />
     </section>
   </article>

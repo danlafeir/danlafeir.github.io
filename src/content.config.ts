@@ -26,12 +26,24 @@ const ideas = defineCollection({
   }),
 });
 
+const measure = z.object({
+  qty: z.number().positive(),
+  unit: z.string().optional(),
+});
+
 const recipes = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/recipes' }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
     draft: z.boolean().optional(),
+    yield: measure.required({ unit: true }).optional(),
+    ingredients: z.array(
+      z.object({
+        name: z.string(),
+        measures: z.array(measure).min(1),
+      }),
+    ),
   }),
 });
 

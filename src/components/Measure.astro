@@ -1,0 +1,12 @@
+---
+import { formatMeasure } from '../lib/recipe';
+
+interface Props {
+  qty: number;
+  unit?: string;
+}
+
+const { qty, unit } = Astro.props;
+---
+
+<span class="measure" data-qty={qty} data-unit={unit}>{formatMeasure(qty, unit)}</span>
