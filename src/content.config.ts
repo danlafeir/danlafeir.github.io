@@ -26,4 +26,13 @@ const ideas = defineCollection({
   }),
 });
 
-export const collections = { playbook, pages, ideas };
+const recipes = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/recipes' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    draft: z.boolean().optional(),
+  }),
+});
+
+export const collections = { playbook, pages, ideas, recipes };

@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const recipes = (await getCollection('recipes', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<Layout title="Recipes" description="Things worth making again.">
+  <div class="page-header">
+    <h1 class="page-title">Recipes</h1>
+    <p class="page-subtitle">Things worth making again.</p>
+  </div>
+  <ul class="post-list">
+    {recipes.map((recipe) => (
+      <li class="post-list-item">
+        <h2><a href={`/recipes/${recipe.id}/`}>{recipe.data.title}</a></h2>
+        {recipe.data.description && <p class="post-excerpt">{recipe.data.description}</p>}
+      </li>
+    ))}
+  </ul>
+</Layout>

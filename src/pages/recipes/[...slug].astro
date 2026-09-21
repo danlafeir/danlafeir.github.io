@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const recipes = await getCollection('recipes', ({ data }) => !data.draft);
+  return recipes.map((recipe) => ({
+    params: { slug: recipe.id },
+    props: { recipe },
+  }));
+}
+
+const { recipe } = Astro.props;
+const { Content } = await render(recipe);
+---
+
+<Layout title={recipe.data.title} description={recipe.data.description}>
+  <article>
+    <header class="blog-post-header">
+      <h1>{recipe.data.title}</h1>
+      {recipe.data.description && (
+        <p style="color: var(--color-text-muted); margin-top: 0.5rem; font-size: 1rem;">
+          {recipe.data.description}
+        </p>
+      )}
+    </header>
+    <hr />
+    <section class="blog-post-body">
+      <Content />
+    </section>
+  </article>
+
+  <div style="margin-top: 3rem;">
+    <a href="/recipes/" style="font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600;">
+      ← Recipes
+    </a>
+  </div>
+</Layout>
