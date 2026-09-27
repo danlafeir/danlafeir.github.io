@@ -28,6 +28,20 @@ ingredients:
 2. Let it sit out until active (bubbly, starting to rise), then move it to the fridge.
 3. Feed weekly. Pull it out, let it come to room temperature, feed, wait for activity, then either bake or return it to the fridge.
 
+## Putting it in the fridge
+
+- Use a jar with headroom — the starter needs room to rise even at fridge temperatures, and a tight lid can pop off or let pressure build. A loose-fitting lid or one turned to "burp" is safer than an airtight seal.
+- Only refrigerate right after a fresh feed, once it's active and starting to rise, not straight after mixing. A cold, unfed starter takes much longer to show signs of life and is harder to judge.
+- Label the jar with the feed date. Fridge starters slow down but don't stop — it's easy to lose track of a week.
+- A skin, slight gray tint, or a thin layer of hooch after several days in the fridge is normal, not spoilage — stir it back in at the next feeding.
+
+## Going longer than a week
+
+- Missed a feeding by a few days? No problem — feed as usual, expect a slower rise, and give it an extra day if it looks sluggish.
+- For 2 to 3 weeks away, feed heavier before refrigerating (try 1:3:3) to stretch how long it lasts before it's starved.
+- For longer trips, dry it out instead: spread a thin layer of fed starter on parchment or a silicone mat, let it air-dry fully at room temperature, then break it into flakes and store in a sealed container or bag at room temperature or in the fridge. Rehydrate with equal parts warm water, then resume normal feeding until active again.
+- A starter that's been neglected for a month or more is usually still recoverable — expect a few feedings at 1:1:1 with discards before it's back to peaking reliably.
+
 ## Is it ready to use?
 
 - Doubled, or close to it, since feeding
