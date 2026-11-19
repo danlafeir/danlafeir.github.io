@@ -2,6 +2,7 @@
 title: "Domain-Driven Team Topologies"
 description: "Building technology organizations resilient to change requires aligning how teams communicate, how your business works, and how your systems are designed."
 date: "2026-05-15"
+draft: true
 ---
 
 Technology organizations that can effectively absorb change tend to share a common trait: how teams communicate and how the business works is embedded in the design of the organization. I will present to you three complementary ideas to enable this design. Conway's Law, first articulated in 1968, observes that systems mirror the communication structures of the organizations that build them. Eric Evans's *Domain-Driven Design* provides a framework for modeling the business domain precisely enough to build software that genuinely reflects it. And *Team Topologies* by Matthew Skelton and Manuel Pais gives us the vocabulary for structuring teams around that model. Together, they form a model to build an organization optimized for change.

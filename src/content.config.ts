@@ -16,16 +16,6 @@ const pages = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/pages' }),
 });
 
-const ideas = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/ideas' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    date: z.string().optional(),
-    draft: z.boolean().optional(),
-  }),
-});
-
 const musings = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/musings' }),
   schema: z.object({
@@ -57,4 +47,4 @@ const recipes = defineCollection({
   }),
 });
 
-export const collections = { playbook, pages, ideas, musings, recipes };
+export const collections = { playbook, pages, musings, recipes };

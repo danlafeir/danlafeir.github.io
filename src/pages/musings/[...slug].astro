@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const musings = await getCollection('musings', ({ data }) => !data.draft);
+  const musings = await getCollection('musings');
   return musings.map((musing) => ({
     params: { slug: musing.id },
     props: { musing },
@@ -17,7 +17,7 @@ const { Content } = await render(musing);
 <Layout title={musing.data.title} description={musing.data.description}>
   <article>
     <header class="blog-post-header">
-      <h1>{musing.data.title}</h1>
+      <h1>{musing.data.title}{musing.data.draft && <span class="draft-label">Draft</span>}</h1>
       {musing.data.description && (
         <p style="color: var(--color-text-muted); margin-top: 0.5rem; font-size: 1rem;">
           {musing.data.description}
