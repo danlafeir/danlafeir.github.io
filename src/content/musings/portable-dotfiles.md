@@ -41,9 +41,11 @@ Reviewing my own repo as a stranger would, the headline was that it was a **mac 
 - Linux and Windows stubs. Linux now has an adapter; Windows is still a manual guide.
 - No tests. A script that provisions machines should not be trusted only on the machine it was written on, so there is now a test suite that runs against a throwaway home directory, and CI to run it.
 
-## What I could not verify
+## What I tested, and what I haven't
 
-The Linux adapter and the CI workflow have not run yet: I had no Linux host, and CI needs a push. The rewritten bootstrap has only been exercised against a temporary home directory, never for real. Treat those as first-run fixes waiting to happen.
+I ran the base profile in a clean Ubuntu container and the base and python profiles on macOS against a throwaway home directory. Both runs found real bugs that review had missed: on Linux the shell framework installed before the tools it needs, and the failure was silently swallowed; on macOS, `brew bundle` upgraded packages regardless of my flag, a broken tool install failed the whole bootstrap, and `pipx` quietly wrote a machine-specific line into a tracked file. All fixed.
+
+Still unverified: CI has not run, the other profiles have not been run end to end, and the bootstrap has not been run against my real home directory since the rewrite.
 
 ## What's left
 
