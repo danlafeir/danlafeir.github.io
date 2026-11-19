@@ -26,6 +26,16 @@ const ideas = defineCollection({
   }),
 });
 
+const musings = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/musings' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    date: z.string().optional(),
+    draft: z.boolean().optional(),
+  }),
+});
+
 const measure = z.object({
   qty: z.number().positive(),
   unit: z.string().optional(),
@@ -47,4 +57,4 @@ const recipes = defineCollection({
   }),
 });
 
-export const collections = { playbook, pages, ideas, recipes };
+export const collections = { playbook, pages, ideas, musings, recipes };

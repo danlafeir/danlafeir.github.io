@@ -79,4 +79,4 @@ Changes to deployed code get a review of the exact diff and commit list before t
 - **Trailers** turn history into data: find every commit tied to a ticket, every breaking change, every commit that can't be cleanly reverted.
 - **Small commits** keep `git bisect` and `git revert` useful.
 
-These rules live in the global agent instructions in my [dotfiles](https://github.com/danlafeir/dotfiles), so AI assistants working in any repo follow the same conventions as I do. See [Portable Dev Tooling with Dotfiles](/ideas/portable-dotfiles/).
+These rules live in the global agent instructions in my [dotfiles](https://github.com/danlafeir/dotfiles), so AI assistants working in any repo follow the same conventions as I do. See [Portable Dev Tooling with Dotfiles](/musings/portable-dotfiles/).
