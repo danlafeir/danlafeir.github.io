@@ -38,6 +38,11 @@ The pair programming session is the most signal-rich part of the process. The go
 
 ### 5. Behavioral/Fit Interview
 
+Questions:
+
+- What have you learned recently?
+- If you could wave a magic wand, what's one thing you would change and why?
+
 
 ### 6. (optional) Follow up interview with hiring manager
 
