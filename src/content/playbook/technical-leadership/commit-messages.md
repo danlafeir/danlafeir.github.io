@@ -1,7 +1,7 @@
 ---
 title: Commit Messages
 section: Technical Leadership
-description: How I structure git commits and messages — small, focused, explained, and machine-readable.
+description: Record changes to the repository, with intention.
 order: 3
 ---
 
