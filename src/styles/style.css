@@ -985,6 +985,11 @@ hr {
 }
 main:focus { outline: none; }
 
+@media (max-width: 768px) {
+  /* Clears the sticky mobile header (about 65px) so the skip link doesn't land content under it. */
+  #main { scroll-margin-top: 5rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root { --transition: 0s; }
 }
