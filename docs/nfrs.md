@@ -40,8 +40,15 @@ changes deployed code. Edit this file to revise the list.
 - **Why it matters here:** This is a reading-focused site used on desktop, mobile and in print (the resume).
 - **Target:** none declared
 - **How to check a diff:**
-  - Images through `astro:assets` need meaningful `alt` text.
+  - Images through `astro:assets` need meaningful `alt` text, unless the image is decorative and its meaning is already in nearby text. Then use `alt=""`. Example: the sidebar avatar in `src/layouts/Layout.astro`, with the name printed below it.
+  - Decorative inline SVG icons next to a text label need `aria-hidden="true"`.
   - Buttons such as `#menu-toggle` and `#download-pdf`, and the recipe batch-size control in `src/pages/recipes/[...slug].astro`, need accessible names and states (for example `aria-pressed`).
+  - `#menu-toggle` keeps `aria-expanded` and `aria-controls="sidebar-menu"`, and `id="sidebar-menu"` stays on the collapsible sidebar container in `src/layouts/Layout.astro`.
+  - The `.skip-link` anchor stays the first element in `<body>` in `src/layouts/Layout.astro` and points to `#main`. `<main>` keeps `id="main"` and `tabindex="-1"`.
+  - At 768px wide or narrower, `.skip-link` in `src/styles/style.css` keeps a `z-index` above the sticky mobile sidebar (currently 200 vs 100), and `#main` keeps a `scroll-margin-top` at least as tall as the mobile header. Otherwise the link, or the content it jumps to, ends up hidden under that header.
+  - Nav links set `aria-current="page"` only on an exact path match, and `aria-current="true"` when the current page is inside that link's section.
+  - The global `:focus-visible` outline in `src/styles/style.css` must not be removed or overridden with `outline: none`, except on `main:focus`.
+  - The `prefers-reduced-motion: reduce` rule in `src/styles/style.css` keeps `--transition` at `0s`. New animations should use `var(--transition)` so the rule covers them.
   - Each page needs one `<h1>` and a logical heading order.
   - Colours should go through the CSS variables in `src/styles/style.css` so contrast holds in both themes.
 - **Out of scope:** Content inside third-party linked sites.
