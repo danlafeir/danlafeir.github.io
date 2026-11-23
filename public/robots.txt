@@ -1,0 +1,7 @@
+# Every crawler is welcome, including AI crawlers (GPTBot, ClaudeBot,
+# PerplexityBot, Google-Extended, and others), so the site can be cited
+# in AI search answers. Drafts are excluded with a noindex tag instead.
+User-agent: *
+Allow: /
+
+Sitemap: https://daniellafeir.com/sitemap.xml
