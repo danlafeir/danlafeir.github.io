@@ -6,7 +6,7 @@ order: 1
 draft: true
 ---
 
-![interview workflow](/images/playbook/engineer_workflow.png)
+![Engineer interview flow: recruiter screen, then hiring manager screen, then an AI-generated project sent for the candidate to review and run locally, then a pair programming interview. Interviewers check in on whether to stop, then run behavioral/fit and technical interviews in parallel. After a debrief with interviewers, the candidate gets either a follow-up interview with the hiring manager, which can lead to an offer, or an offer directly.](/images/playbook/engineer_workflow.png)
 
 ## Stages
 

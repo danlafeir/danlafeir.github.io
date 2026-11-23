@@ -5,7 +5,7 @@ description: Ideas for career paths that decouples compensation from titles, sup
 order: 1
 ---
 
-![career progression](/images/playbook/career_progression.png)
+![Engineering career progression: individual contributor levels L1 through L10 in a row, with a parallel management track of Manager, Senior Manager, Director and Senior Director running above levels L4 through L10](/images/playbook/career_progression.png)
 
 *Here is an example of the what a breakdown of career progression*
 

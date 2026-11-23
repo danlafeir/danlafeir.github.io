@@ -962,3 +962,29 @@ hr {
     order: -1;
   }
 }
+
+/* ── Accessibility ── */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--color-surface);
+  color: var(--color-link);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+.skip-link:focus { top: 1rem; }
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+main:focus { outline: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --transition: 0s; }
+}

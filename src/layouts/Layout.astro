@@ -56,6 +56,7 @@ function isActive(href: string) {
     {structuredData && <script type="application/ld+json" set:html={toJsonLd(structuredData)} />}
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-wrapper">
       <aside class="sidebar" id="sidebar">
         <div class="sidebar-topbar">
@@ -65,7 +66,7 @@ function isActive(href: string) {
               src={profilePic}
               width={100}
               height={100}
-              alt="Dan Lafeir"
+              alt=""
             />
             <p class="sidebar-name">Dan Lafeir</p>
             <p class="sidebar-tagline">Builder, Leader, Adapter</p>
@@ -75,6 +76,7 @@ function isActive(href: string) {
             class="mobile-menu-toggle"
             id="menu-toggle"
             aria-label="Open menu"
+            aria-controls="sidebar-menu"
             aria-expanded="false"
           >
             <svg class="icon-hamburger" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -89,7 +91,7 @@ function isActive(href: string) {
           </button>
         </div>
 
-        <div class="sidebar-collapsible">
+        <div class="sidebar-collapsible" id="sidebar-menu">
           <nav>
             <ul class="sidebar-nav">
               {navLinks.map(({ href, label, external }) => (
@@ -97,6 +99,7 @@ function isActive(href: string) {
                   <a
                     href={href}
                     class={!external && isActive(href) ? 'active' : ''}
+                    aria-current={!external && isActive(href) ? 'page' : undefined}
                     {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >{label}</a>
                 </li>
@@ -121,7 +124,7 @@ function isActive(href: string) {
         </div>
       </aside>
 
-      <main class="main-content">
+      <main class="main-content" id="main" tabindex="-1">
         <div class="content-inner">
           <slot />
         </div>
