@@ -6,7 +6,7 @@ const musings = (await getCollection('musings', ({ data }) => !data.draft))
   .sort((a, b) => (b.data.date ?? '').localeCompare(a.data.date ?? ''));
 ---
 
-<Layout title="Musings">
+<Layout title="Musings" description="Dan Lafeir's notes on how he works and the tools he builds along the way.">
   <header class="blog-post-header">
     <h1>Musings</h1>
     <p style="color: var(--color-text-muted); font-size: 1rem;">

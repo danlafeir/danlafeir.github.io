@@ -7,7 +7,10 @@ const { Content } = await render(about!);
 const { title, subtitle } = about!.data as any;
 ---
 
-<Layout title="About">
+<Layout
+  title="About"
+  description="Dan Lafeir is a software builder and engineering leader in Chicago who writes about systems thinking, technical leadership, and the tools he builds."
+>
   <div class="page-header">
     <h1 class="page-title">{title}</h1>
     <p class="page-subtitle">{subtitle}</p>

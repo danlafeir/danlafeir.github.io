@@ -6,7 +6,7 @@ const entry = await getEntry('pages', 'projects');
 const { title, subtitle, projects } = entry!.data as any;
 ---
 
-<Layout title={title}>
+<Layout title={title} description="Software Dan Lafeir has built or contributed to, from command-line tools and dotfiles to developer workflow projects.">
   <div class="page-header">
     <h1 class="page-title">{title}</h1>
     <p class="page-subtitle">{subtitle}</p>

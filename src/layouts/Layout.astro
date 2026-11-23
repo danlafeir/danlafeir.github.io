@@ -13,6 +13,7 @@ interface Props {
 
 const { title, description = "Dan Lafeir's personal site — projects, playbook, and resume.", noindex = false } = Astro.props;
 const pathname = Astro.url.pathname;
+const canonicalUrl = new URL(pathname, Astro.site);
 
 const navLinks = [
   { href: '/', label: 'About' },
@@ -35,7 +36,7 @@ function isActive(href: string) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalUrl} />}
     <title>{title} · Dan Lafeir</title>
     <link rel="icon" type="image/svg+xml" href="/images/icon.svg" />
   </head>
