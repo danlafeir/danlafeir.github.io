@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import profilePic from '../assets/profile_pic.png';
 import '../styles/style.css';
 import { toJsonLd } from '../lib/structured-data';
@@ -16,6 +16,8 @@ interface Props {
 const { title, description = "Dan Lafeir's personal site — projects, playbook, and resume.", noindex = false, structuredData } = Astro.props;
 const pathname = Astro.url.pathname;
 const canonicalUrl = new URL(pathname, Astro.site);
+const shareImage = await getImage({ src: profilePic, width: 600, height: 600, fit: 'cover', position: 'top', format: 'jpeg', background: '#fafaf8' });
+const shareImageUrl = new URL(shareImage.src, Astro.site);
 
 const navLinks = [
   { href: '/', label: 'About' },
@@ -41,6 +43,16 @@ function isActive(href: string) {
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalUrl} />}
     <title>{title} · Dan Lafeir</title>
     <link rel="icon" type="image/svg+xml" href="/images/icon.svg" />
+    <meta property="og:site_name" content="Dan Lafeir" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={shareImageUrl} />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:image:alt" content="Cartoon avatar of Dan Lafeir typing on a laptop" />
+    <meta name="twitter:card" content="summary" />
     {structuredData && <script type="application/ld+json" set:html={toJsonLd(structuredData)} />}
   </head>
   <body>
