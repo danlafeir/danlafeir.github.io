@@ -2,6 +2,8 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Measure from '../../components/Measure.astro';
+import { formatMeasure } from '../../lib/recipe';
+import { author } from '../../lib/structured-data';
 
 export async function getStaticPaths() {
   const recipes = await getCollection('recipes');
@@ -21,9 +23,19 @@ const BATCH_SIZES = [
   { factor: 2, label: '2×' },
   { factor: 3, label: '3×' },
 ];
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: recipe.data.title,
+  description: recipe.data.description,
+  url: new URL(Astro.url.pathname, Astro.site).href,
+  author,
+  recipeYield: makes && formatMeasure(makes.qty, makes.unit),
+  recipeIngredient: ingredients.map(({ name, measures: [primary] }) => `${formatMeasure(primary.qty, primary.unit)} ${name}`),
+};
 ---
 
-<Layout title={recipe.data.title} description={recipe.data.description} noindex={recipe.data.draft}>
+<Layout title={recipe.data.title} description={recipe.data.description} noindex={recipe.data.draft} structuredData={structuredData}>
   <article>
     <header class="blog-post-header">
       <h1>{recipe.data.title}{recipe.data.draft && <span class="draft-label">Draft</span>}</h1>

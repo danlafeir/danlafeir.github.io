@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import profilePic from '../assets/profile_pic.png';
 import '../styles/style.css';
+import { toJsonLd } from '../lib/structured-data';
 import '@fontsource-variable/montserrat';
 import '@fontsource/merriweather';
 
@@ -9,9 +10,10 @@ interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
+  structuredData?: object;
 }
 
-const { title, description = "Dan Lafeir's personal site — projects, playbook, and resume.", noindex = false } = Astro.props;
+const { title, description = "Dan Lafeir's personal site — projects, playbook, and resume.", noindex = false, structuredData } = Astro.props;
 const pathname = Astro.url.pathname;
 const canonicalUrl = new URL(pathname, Astro.site);
 
@@ -39,6 +41,7 @@ function isActive(href: string) {
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalUrl} />}
     <title>{title} · Dan Lafeir</title>
     <link rel="icon" type="image/svg+xml" href="/images/icon.svg" />
+    {structuredData && <script type="application/ld+json" set:html={toJsonLd(structuredData)} />}
   </head>
   <body>
     <div class="site-wrapper">

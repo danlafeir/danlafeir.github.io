@@ -1,14 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import profilePic from '../assets/profile_pic.png';
+import { person } from '../lib/structured-data';
 import { getEntry, render } from 'astro:content';
 
 const about = await getEntry('pages', 'about');
 const { Content } = await render(about!);
 const { title, subtitle } = about!.data as any;
+const structuredData = person(new URL(profilePic.src, Astro.site).href);
 ---
 
 <Layout
   title="About"
+  structuredData={structuredData}
   description="Dan Lafeir is a software builder and engineering leader in Chicago who writes about systems thinking, technical leadership, and the tools he builds."
 >
   <div class="page-header">
