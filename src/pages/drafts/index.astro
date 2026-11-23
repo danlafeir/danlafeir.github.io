@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const isDraft = ({ data }: { data: { draft?: boolean } }) => data.draft === true;
+const byTitle = (a: { data: { title: string } }, b: { data: { title: string } }) =>
+  a.data.title.localeCompare(b.data.title);
+
+const sections = [
+  {
+    name: 'Playbook',
+    entries: (await getCollection('playbook', isDraft)).sort(byTitle).map((e) => ({
+      href: `/playbook/${e.id}/`, title: e.data.title, note: e.data.section,
+    })),
+  },
+  {
+    name: 'Musings',
+    entries: (await getCollection('musings', isDraft)).sort(byTitle).map((e) => ({
+      href: `/musings/${e.id}/`, title: e.data.title, note: e.data.description,
+    })),
+  },
+  {
+    name: 'Recipes',
+    entries: (await getCollection('recipes', isDraft)).sort(byTitle).map((e) => ({
+      href: `/recipes/${e.id}/`, title: e.data.title, note: e.data.description,
+    })),
+  },
+].filter((section) => section.entries.length > 0);
+---
+
+<Layout title="Drafts" noindex>
+  <header class="blog-post-header">
+    <h1>Drafts</h1>
+    <p style="color: var(--color-text-muted); font-size: 1rem;">
+      Work in progress, unlisted elsewhere on the site.
+    </p>
+  </header>
+  {sections.length === 0 && <p>No drafts right now.</p>}
+  {sections.map((section) => (
+    <section>
+      <h2>{section.name}</h2>
+      <ul class="post-list">
+        {section.entries.map((entry) => (
+          <li class="post-list-item">
+            <a href={entry.href}>{entry.title}</a>
+            {entry.note && <p>{entry.note}</p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Layout>

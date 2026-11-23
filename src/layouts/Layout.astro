@@ -8,9 +8,10 @@ import '@fontsource/merriweather';
 interface Props {
   title: string;
   description?: string;
+  noindex?: boolean;
 }
 
-const { title, description = "Dan Lafeir's personal site — projects, playbook, and resume." } = Astro.props;
+const { title, description = "Dan Lafeir's personal site — projects, playbook, and resume.", noindex = false } = Astro.props;
 const pathname = Astro.url.pathname;
 
 const navLinks = [
@@ -34,6 +35,7 @@ function isActive(href: string) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <title>{title} · Dan Lafeir</title>
     <link rel="icon" type="image/svg+xml" href="/images/icon.svg" />
   </head>

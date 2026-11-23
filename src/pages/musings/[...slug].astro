@@ -14,7 +14,7 @@ const { musing } = Astro.props;
 const { Content } = await render(musing);
 ---
 
-<Layout title={musing.data.title} description={musing.data.description}>
+<Layout title={musing.data.title} description={musing.data.description} noindex={musing.data.draft}>
   <article>
     <header class="blog-post-header">
       <h1>{musing.data.title}{musing.data.draft && <span class="draft-label">Draft</span>}</h1>
