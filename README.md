@@ -31,7 +31,9 @@ npm run build
 
 - Add the page under `src/pages/`.
 - Add its path to `STATIC_PATHS` in `src/pages/sitemap.xml.ts`. Top-level pages are listed by hand, and a page missing from that list is left out of the sitemap.
-- Pass a page-specific `description` to `Layout` in `src/layouts/Layout.astro`. Otherwise the page falls back to the generic site description.
+- Pass a page-specific `title` and `description` to `Layout` in `src/layouts/Layout.astro`. Without a `description`, the page falls back to the generic site description.
+- `title` and `description` also fill the page's Open Graph and Twitter card tags (`og:title`, `og:description`), which control the preview shown when the link is shared in Slack, LinkedIn, iMessage or X.
+- Every page uses the same preview image: a 600x600 JPEG that `Layout` crops from `src/assets/profile_pic.png` at build time. Pages can't set their own image yet.
 - Pass `noindex` to `Layout` for any page that should stay out of search results. Indexable pages get a canonical URL automatically.
 - Optionally pass `structuredData` to `Layout`, built with the helpers in `src/lib/structured-data.ts`.
 

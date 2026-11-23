@@ -15,7 +15,7 @@ changes deployed code. Edit this file to revise the list.
 - **Why it matters here:** The site is a personal profile meant to be found in traditional and AI search. It relies on per-page meta, canonical URLs, JSON-LD and a sitemap.
 - **Target:** Drafts are never in the sitemap. Every page with `draft: true`, and `/drafts/`, stays out of `dist/sitemap.xml` and keeps its `noindex` robots tag.
 - **How to check a diff:**
-  - In `src/layouts/Layout.astro`, check the title, description, canonical-or-noindex logic and the JSON-LD script.
+  - In `src/layouts/Layout.astro`, check the title, description, canonical-or-noindex logic, the JSON-LD script, and the Open Graph and Twitter card tags (`og:title`, `og:description`, `og:url`, `og:image` with width, height and alt, and `twitter:card`).
   - In `src/pages/sitemap.xml.ts`, check the draft filter and that `STATIC_PATHS` matches the top-level pages.
   - In `public/robots.txt`, check that AI crawlers are still allowed on purpose.
   - Check that each page still passes `description`, `noindex` and `structuredData` to `Layout`.
