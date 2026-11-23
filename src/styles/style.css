@@ -968,7 +968,7 @@ hr {
   position: absolute;
   left: 1rem;
   top: -100%;
-  z-index: 100;
+  z-index: 200; /* above the sticky mobile sidebar (z-index 100) */
   padding: 0.5rem 1rem;
   background: var(--color-surface);
   color: var(--color-link);
